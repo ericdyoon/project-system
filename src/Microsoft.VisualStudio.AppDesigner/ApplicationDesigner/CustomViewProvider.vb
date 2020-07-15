@@ -50,6 +50,8 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
 
     End Class
 
+
+
     ''' <summary>
     ''' This is a simple, related class that returns the document moniker to use to
     '''   create a view.

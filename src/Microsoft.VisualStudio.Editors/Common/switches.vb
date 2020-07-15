@@ -8,6 +8,7 @@ Imports Microsoft.VisualStudio.Editors.PropertyPages
 
 Namespace Microsoft.VisualStudio.Editors.Common
 
+
 #If 0 Then
 
      Using these is a three-step process.
@@ -138,6 +139,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
 
 #End If
 
+
     ''' <summary>
     ''' Contains predefined switches for enabling/disabling trace output or code instrumentation.
     ''' </summary>
@@ -185,21 +187,33 @@ Namespace Microsoft.VisualStudio.Editors.Common
         ''' </summary>
         Public Shared RSEFindReplace As New TraceSwitch("RSEFindReplace", "Trace find/replace in the resource editor")
 
+
+
         '------------- Designer Framework -------------
+
+
 
         ''' <summary>
         ''' Trace the showing of context menus via the base control classes in DesignerFramework
         ''' </summary>
         Public Shared DFContextMenu As New TraceSwitch("DFContextMenu", "Trace the showing of context menus via the base control classes in DesignerFramework")
 
+
+
         '------------- Common switches for Microsoft.VisualStudio.Editors -------------
+
+
 
         ''' <summary>
         ''' Trace source code control integration behavior in Microsoft.VisualStudio.Editors.dll
         ''' </summary>
         Public Shared MSVBE_SCC As New TraceSwitch("MSVBE_SCC", "Trace source code control integration behavior in Microsoft.VisualStudio.Editors.dll")
 
+
+
         '------------- Project Designer -------------
+
+
 
         ''' <summary>
         ''' Trace when the active designer changes in the project designer
@@ -319,6 +333,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
         End Function
 #End If
 
+
 #If DEBUG Then
         ''' <summary>
         ''' Formats a Win32 message into a friendly form for debugging/tracing purposes
@@ -356,10 +371,11 @@ Namespace Microsoft.VisualStudio.Editors.Common
                 str.Append(" """ & WindowText & """")
             End If
 
-            str.Append("}"c)
+            str.Append("}")
             Return str.ToString()
         End Function
 #End If
+
 
 #If DEBUG Then
         Private Shared s_timeCodeStart As Date
@@ -387,6 +403,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             s_firstTimeCodeTaken = True
 #End If
         End Sub
+
 
 #Region "EnumSwitch(Of T)"
 
@@ -418,7 +435,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
                     Return CType([Enum].Parse(GetType(T), MyBase.Value), T)
                 End Get
                 Set
-                    MyBase.Value = Value.ToString()
+                    MyBase.Value = value.ToString()
                 End Set
             End Property
 
@@ -472,6 +489,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
 #End If
         End Sub
 
+
         ''' <summary>
         ''' Trace project designer focus-related events
         ''' </summary>
@@ -484,6 +502,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
 #End If
         End Sub
 
+
         ''' <summary>
         ''' Trace the functionality of extender properties
         ''' </summary>
@@ -495,6 +514,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             Trace.WriteLineIf(PDExtenders.Level >= Level, "PDExtenders: " & Format(Message, FormatArguments))
 #End If
         End Sub
+
 
         ''' <summary>
         ''' Trace configuration setup and changes tracking in the project designer
@@ -514,6 +534,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             TracePDConfigs(TraceLevel.Verbose, Message, FormatArguments)
 #End If
         End Sub
+
 
         ''' <summary>
         ''' Trace configuration setup and changes tracking in the project designer
@@ -570,6 +591,8 @@ Namespace Microsoft.VisualStudio.Editors.Common
         End Sub
 #End If
 
+
+
         ''' <summary>
         ''' Trace configuration setup and changes tracking in the project designer
         ''' </summary>
@@ -581,6 +604,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             Trace.WriteLineIf(PDCmdTarget.Level >= TraceLevel, "PDCmdTarget: " & Format(Message, FormatArguments))
 #End If
         End Sub
+
 
         ''' <summary>
         ''' Trace Win32 message routing
@@ -599,6 +623,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             End If
 #End If
         End Sub
+
 
         ''' <summary>
         ''' Trace Win32 message routing
@@ -621,6 +646,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             Trace.WriteLineIf(PDAccessModifierCombobox.Level >= traceLevel, "PDAccessModifierCombobox: " & message)
 #End If
         End Sub
+
 
         ''' <summary>
         ''' Trace serialization of settings
@@ -665,6 +691,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
 #End If
         End Sub
 
+
         ''' <summary>
         ''' Trace changes to one of the monitored configuration files 
         ''' </summary>
@@ -676,6 +703,7 @@ Namespace Microsoft.VisualStudio.Editors.Common
             Trace.WriteLineIf(WCF_Config_FileChangeWatch.Level >= tracelevel, message)
 #End If
         End Sub
+
 
         <Conditional("DEBUG")>
         Public Shared Sub TracePDPerfBegin(e As Windows.Forms.LayoutEventArgs, Message As String, ParamArray FormatArguments() As Object)

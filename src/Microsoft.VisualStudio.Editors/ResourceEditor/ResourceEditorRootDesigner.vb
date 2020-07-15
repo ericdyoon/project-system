@@ -4,6 +4,7 @@ Option Explicit On
 Option Strict On
 Option Compare Binary
 
+
 Imports System.ComponentModel
 Imports System.ComponentModel.Design
 Imports System.ComponentModel.Design.Serialization
@@ -25,6 +26,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
     Friend NotInheritable Class ResourceEditorRootDesigner
         Inherits DesignerFramework.BaseRootDesigner
         Implements IRootDesigner, IVsFindTarget, OLE.Interop.IOleCommandTarget, IVsDebuggerEvents
+
+
 
 #Region "Fields"
 
@@ -95,6 +98,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region "Properties"
 
         ''' <summary>
@@ -108,6 +112,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns the ResourceEditorRoot component that is being edited by this designer.
         ''' </summary>
@@ -119,6 +124,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         '''  Returns the IDesignerHost from the RootDesigner.
         ''' </summary>
@@ -129,6 +135,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _designerHost
             End Get
         End Property
+
 
         ''' <summary>
         '''  Returns the DesignerLoader associated with this RootDesigner.
@@ -163,6 +170,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region "View support (IRootDesigner implementation)"
 
         ''' <summary>
@@ -174,6 +182,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return CType(IRootDesigner_GetView(ViewTechnology.Default), ResourceEditorView)
         End Function
 
+
         ''' <summary>
         ''' Returns True iff there a View has already been created.
         ''' </summary>
@@ -182,6 +191,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _view IsNot Nothing
             End Get
         End Property
+
 
         ''' <summary>
         ''' Called by the managed designer mechanism to determine what kinds of view technologies we support.
@@ -193,6 +203,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return New ViewTechnology() {ViewTechnology.Default}
             End Get
         End Property
+
 
         ''' <summary>
         ''' Called by the managed designer technology to get our view, or the actual control that implements
@@ -282,6 +293,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Used to set the ResourceFile which should be displayed in the designer view.
         ''' </summary>
@@ -289,6 +301,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Friend Sub SetResourceFile(ResXResourceFile As ResourceFile)
             GetView().SetResourceFile(ResXResourceFile)
         End Sub
+
 
         ''' <summary>
         ''' Attempts to retrieve the filename and path of the .resx file being edited.
@@ -337,6 +350,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region "Persist/depersist editor state"
 
         ''' <summary>
@@ -369,6 +383,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Attempts to depersist the editor state from that which was saved in the last call
         '''   to TryPersistCurrentEditorState().
@@ -393,7 +408,9 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region " Find / Replace - IVsFindTarget "
+
 
         'NOTE: A note on the params in the PIAs that take an array when they look like they should be
         '  taking a ByRef parameter:
@@ -405,6 +422,9 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         '   If you are called you can test for null and then dereference the first element to make an assignment.  If 
         '   you know of a specific item that you believe is not in this category I will take a look.
         '
+
+
+
 
         ''' <summary>
         ''' Register this root designer as a view helper with the current frame so the shell will can find our
@@ -443,6 +463,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Try
         End Sub
 
+
         ''' <summary>
         '''  Unregister our IVsFindTarget with the current frame so the shell will call us to find / replace.
         ''' </summary>
@@ -458,6 +479,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Try
         End Sub
 
+
         ''' <summary>
         '''  Reset the array of Resources to find / replace in and the find / replace loop.
         ''' </summary>
@@ -469,6 +491,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             _findReplace.InvalidateFindLoop(ResourcesAddedOrRemoved)
         End Sub
 
+
         ''' <summary>
         ''' Specifies our editor's supported capabilities for Find / Replace.
         ''' </summary>
@@ -478,6 +501,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             _findReplace.GetCapabilities(pfImage, pgrfOptions)
             Return NativeMethods.S_OK
         End Function
+
 
         ''' <summary>
         ''' Returns a value of a requested property.
@@ -489,6 +513,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return _findReplace.GetProperty(propid, pvar)
         End Function
 
+
         ''' <summary>
         ''' Gets the find state object that we hold for the find engine.
         ''' </summary>
@@ -499,6 +524,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return NativeMethods.S_OK
         End Function
 
+
         ''' <summary>
         ''' Sets the find state object that we hold for the find engine.
         ''' </summary>
@@ -507,6 +533,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             _findReplace.SetFindState(pUnk)
             Return NativeMethods.S_OK
         End Function
+
 
         ''' <summary>
         ''' Searches for a text pattern.
@@ -528,6 +555,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             _findReplace.Find(pszSearch, grfOptions, fResetStartPoint, pHelper, pResult)
             Return NativeMethods.S_OK
         End Function
+
 
         ''' <summary>
         '''  Requests a text string replace.
@@ -552,6 +580,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             'We don't currently support replace.  NOP
             Return NativeMethods.E_NOTIMPL
         End Function
+
 
 #Region " Not-implemented IVsFindTarget methods "
 
@@ -611,6 +640,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
             Return NativeMethods.OLECMDERR_E_NOTSUPPORTED
         End Function
+
 
         ''' <summary>
         ''' Queries the object for the status of one or more commands generated by user interface events.
@@ -756,6 +786,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region "UndoEngine"
 
         ''' <summary>
@@ -781,6 +812,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Sub
 
 #End Region
+
 
     End Class
 End Namespace

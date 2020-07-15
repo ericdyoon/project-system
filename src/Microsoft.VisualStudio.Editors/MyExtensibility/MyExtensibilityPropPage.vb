@@ -166,6 +166,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 .Value = extensionProjectFile.ExtensionDescription
             })
 
+
             Return dataGridViewRow
         End Function
 

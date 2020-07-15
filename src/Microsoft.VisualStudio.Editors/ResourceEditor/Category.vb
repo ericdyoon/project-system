@@ -23,6 +23,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         ''' <param name="e"></param>
         Public Event ResourcesExistChanged(sender As Object, e As EventArgs)
 
+
         ''' <summary>
         ''' Indicates whether this category displays its resources in a stringtable
         '''   or a listview.
@@ -32,12 +33,13 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             ListView    'Resources in this category displayed in a listview
         End Enum
 
+
         'Backing for public properties
         Private ReadOnly _associatedResourceTypeEditors() As ResourceTypeEditor
         Private ReadOnly _categoryDisplay As Display
         Private ReadOnly _localizedName As String
         Private ReadOnly _programmaticName As String
-        Private _resourceCount As Integer
+        Private _resourceCount As Integer = 0
         Private _resourceView As ResourceListView.ResourceView = ResourceListView.ResourceView.Thumbnail
         Private _allowNewEntriesInStringTable As Boolean 'applies only to Display.StringTable
         Private _showTypeColumnInStringTable As Boolean 'applies only to Display.StringTable
@@ -45,9 +47,13 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Private _addCommand As EventHandler
         Private _sorter As IComparer(Of Resource)           ' how to sort resources in the category...
 
+
         '======================================================================
         '= Constructors =                                                     =
         '======================================================================
+
+
+
 
         ''' <summary>
         ''' Constructor for Category
@@ -76,9 +82,14 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
+
+
         '======================================================================
         '= Properties =                                                       =
         '======================================================================
+
+
 
         ''' <summary>
         ''' All resource type editors that are displayed in this category.  A particular
@@ -90,6 +101,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Indicates whether this category displays its resources in a stringtable
         '''   or a listview.
@@ -99,6 +111,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _categoryDisplay
             End Get
         End Property
+
 
         ''' <summary>
         ''' Command to execute if you want to show this category
@@ -132,6 +145,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns a programmatic name which is never localized and never shown to
         '''   the user.  Used when searching for a category by name key.
@@ -141,6 +155,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _programmaticName
             End Get
         End Property
+
 
         ''' <summary>
         ''' The number of resources currently in this category.
@@ -170,6 +185,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Set
         End Property
 
+
         ''' <summary>
         ''' Returns true iff there are resources in this category (ResourceCount > 0)
         ''' </summary>
@@ -178,6 +194,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _resourceCount > 0
             End Get
         End Property
+
 
         ''' <summary>
         ''' The current ResourceView for this category, if this category uses
@@ -192,6 +209,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 _resourceView = Value
             End Set
         End Property
+
 
         ''' <summary>
         ''' If this category uses a string table, indicates whether or not the "Type"

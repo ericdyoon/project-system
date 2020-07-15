@@ -58,7 +58,9 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
             End Using
 
+
         End Sub
+
 
         Private Sub ComboBox_DropDownClosed(sender As Object, e As EventArgs)
 
@@ -109,7 +111,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         ''' <summary>
         ''' Holds the site provided the parent page when the parent page is able to obtain it
         ''' </summary>
-        Public Property Site As IServiceProvider
+        Public Property Site As IServiceProvider = Nothing
 
         ''' <summary>
         ''' Holds the last committed property value.  This can change with user interaction in the combo box

@@ -272,6 +272,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             MoveDown.Enabled = (SelectedCount = 1) AndAlso (ItemIndices.Item(0) < (ReferencePath.Items.Count - 1))
         End Sub
 
+
         ''' <include file='doc\Control.uex' path='docs/doc[@for="Control.ProcessDialogKey"]/*' />
         ''' <summary>
         '''     Processes a dialog key. This method is called during message
@@ -300,6 +301,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
             Return MyBase.ProcessDialogKey(KeyData)
         End Function
+
 
         ''' <summary>
         ''' Processes the ENTER key for this dialog.  We use this instead of KeyPress/Down events

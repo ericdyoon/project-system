@@ -311,6 +311,7 @@ Namespace Microsoft.VisualStudio.Editors.MyExtensibility
             Switches.TraceMyExtensibility(TraceLevel.Verbose, "MyExtensibilitySolutionService.SolutionEvents_AfterClosing: Exit.")
         End Sub
 
+
         ''' ;SolutionEvents_ProjectRemoved
         ''' <summary>
         ''' Handle ProjectRemoved event and remove the associate project service from our collection.

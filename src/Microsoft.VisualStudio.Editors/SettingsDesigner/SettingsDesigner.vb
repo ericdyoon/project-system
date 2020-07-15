@@ -71,6 +71,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             Return View
         End Function
 
+
         ''' <summary>
         ''' Our supported technologies
         ''' </summary>
@@ -111,6 +112,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         End Property
 #End Region
 
+
         ''' <summary>
         ''' Show context menu
         ''' </summary>
@@ -143,6 +145,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             Ns = ProjectUtils.GeneratedSettingsClassNamespace(Hierarchy, ProjectUtils.ItemId(Hierarchy, Item), True)
             Return ProjectUtils.FullyQualifiedClassName(Ns, GeneratedClassName(Hierarchy, ItemId, Settings, ProjectUtils.FileName(Item)))
         End Function
+
 
         ''' <summary>
         ''' Helper method to determine the generated class name...
@@ -366,6 +369,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             If path = "" Then
                 Return
             End If
+
 
             ' The path passed in to us is the path to the current active user.config file..
             Dim currentApplicationVersionDirectoryInfo As New IO.DirectoryInfo(path)

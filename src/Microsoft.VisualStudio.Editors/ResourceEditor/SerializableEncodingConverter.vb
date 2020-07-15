@@ -20,6 +20,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         'Our cached set of standard SerializableEncoding values
         Private _standardValuesCache As StandardValuesCollection
 
+
         ''' <summary>
         ''' Gets a value indicating whether this converter can convert an object in the given source 
         '''   type to a SerializableEncoding object using the specified context.
@@ -31,6 +32,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
             Return MyBase.CanConvertFrom(Context, SourceType)
         End Function
+
 
         ''' <summary>
         ''' Converts the specified value object to a SerializableEncoding object.
@@ -55,6 +57,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return MyBase.ConvertFrom(Context, Culture, Value)
         End Function
 
+
         ''' <summary>
         ''' Converts the given value object to the specified destination type.
         ''' </summary>
@@ -72,6 +75,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return MyBase.ConvertTo(Context, Culture, Value, DestinationType)
         End Function
 
+
         ''' <summary>
         ''' Gets a value indicating whether this object supports a standard set of values that 
         '''   can be picked from a list using the specified context.
@@ -79,6 +83,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overrides Function GetStandardValuesSupported(Context As ITypeDescriptorContext) As Boolean
             Return True
         End Function
+
 
         ''' <summary>
         ''' Indicates whether the standard values that we return are the only allowable values.
@@ -91,6 +96,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overrides Function GetStandardValuesExclusive(Context As ITypeDescriptorContext) As Boolean
             Return False
         End Function
+
 
         ''' <summary>
         ''' Gets a collection of standard values collection for a System.Globalization.CultureInfo
@@ -153,6 +159,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return _standardValuesCache
         End Function
 
+
         ''' <summary>
         ''' Returns true if the encoding is a Unicode encoding variant
         ''' </summary>
@@ -163,6 +170,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 OrElse Encoding.Equals(Encoding.UTF7) _
                 OrElse Encoding.Equals(Encoding.UTF8)
         End Function
+
 
         ''' <summary>
         ''' Returns True iff the given Encoding is valid (which means essentially that

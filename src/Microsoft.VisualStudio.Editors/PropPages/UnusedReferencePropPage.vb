@@ -62,6 +62,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
 #End Region
 
+
 #Region "Protected Methods "
         Protected Overrides Function GetF1HelpKeyword() As String
 
@@ -95,6 +96,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
 
         End Sub
+
 
 #End Region
 
@@ -509,6 +511,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             GetUnusedRefs()
 
         End Sub
+
 
         ''' <summary>
         '''  We need initialize the dialog when it pops up (every time)

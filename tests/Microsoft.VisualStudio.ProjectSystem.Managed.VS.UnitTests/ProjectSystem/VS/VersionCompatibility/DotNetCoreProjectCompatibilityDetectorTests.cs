@@ -157,6 +157,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.VersionCompatibility
             Mock.Get(dialogServices).Verify(x => x.DontShowAgainMessageBox(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
         }
 
+
         private static DotNetCoreProjectCompatibilityDetector CreateCompatibilityDetector(out IDialogServices dialogServices,
                                                                                           string? versionDataString = null,
                                                                                           Version? vsVersion = null,
@@ -220,6 +221,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.VersionCompatibility
     }
   }
 }";
+
 
         private const string defaultUnSupportedVersionDataString = @" {
   ""vsVersions"": {

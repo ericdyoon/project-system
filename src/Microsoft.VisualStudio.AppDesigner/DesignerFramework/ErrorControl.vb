@@ -5,6 +5,7 @@ Imports System.Windows.Forms
 
 Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
 
+
     ''' <summary>
     ''' This is a Windows control that is shown when there is an exception loading a designer or property page.
     ''' All it does is display an error message and an error icon.
@@ -25,6 +26,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
             _sizingLabel = New Label()
         End Sub
 
+
         ''' <summary>
         ''' Constructor
         ''' </summary>
@@ -34,6 +36,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
             Me.Text = Text
         End Sub
 
+
         ''' <summary>
         ''' Constructor
         ''' </summary>
@@ -41,6 +44,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
         Public Sub New(ex As Exception)
             Me.New(AppDesCommon.DebugMessageFromException(ex))
         End Sub
+
 
         ''' <summary>
         ''' Constructor
@@ -59,6 +63,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
             Text = TextBuilder.ToString()
         End Sub
 
+
         ''' <summary>
         ''' Constructor
         ''' </summary>
@@ -71,6 +76,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
                 ErrorText.Text = value
             End Set
         End Property
+
 
         ''' <summary>
         ''' Fires when the ErrorText gets focus
@@ -86,6 +92,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
                 _firstGotFocus = False
             End If
         End Sub
+
 
         ''' <summary>
         ''' Get the preferred size of the control, expanding 

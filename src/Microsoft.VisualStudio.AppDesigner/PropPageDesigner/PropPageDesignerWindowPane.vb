@@ -10,10 +10,13 @@ Imports Microsoft.VisualStudio.Editors.AppDesInterop
 Imports Common = Microsoft.VisualStudio.Editors.AppDesCommon
 Imports Win32Constant = Microsoft.VisualStudio.Editors.AppDesInterop.Win32Constant
 
+
 Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
+
 
     Public NotInheritable Class PropPageDesignerWindowPane
         Inherits AppDesDesignerFramework.DeferrableWindowPaneProviderServiceBase.DesignerWindowPaneBase
+
 
         ''' <summary>
         ''' Creates a new WinformsWindowPane.
@@ -22,6 +25,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
         Public Sub New(surface As DesignSurface)
             MyBase.New(surface, SupportToolbox:=False)
         End Sub
+
 
         ''' <summary>
         ''' Retrieves the PropPageDesignerView associated with this window, if any.
@@ -33,6 +37,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
 
             Return Nothing
         End Function
+
 
         ''' <summary>
         ''' This gives us a crack at messages before they are routed to the control that the message

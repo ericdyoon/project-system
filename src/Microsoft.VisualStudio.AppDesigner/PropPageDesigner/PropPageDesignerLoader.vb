@@ -75,12 +75,13 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
 
         End Sub
 
+
 #Region "Dispose/IDisposable"
         ''' <summary>
         ''' Dispose of managed and unmanaged resources
         ''' </summary>
         ''' <param name="disposing">True if calling from Dispose()</param>
-        Private Overloads Sub Dispose(disposing As Boolean)
+        Protected Overloads Sub Dispose(disposing As Boolean)
             If disposing Then
                 'Remove our ComponentSerializationService
                 LoaderHost.RemoveService(GetType(ComponentSerializationService))

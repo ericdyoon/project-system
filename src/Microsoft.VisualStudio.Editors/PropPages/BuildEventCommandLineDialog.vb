@@ -194,6 +194,8 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             SetInsertButtonEnableState()
         End Sub
 
+
+
         Private Sub TokenList_DoubleClick(sender As Object, e As EventArgs) Handles TokenList.DoubleClick
             AddCurrentMacroToCommandLine()
         End Sub

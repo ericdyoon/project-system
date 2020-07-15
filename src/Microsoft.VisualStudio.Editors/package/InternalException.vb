@@ -22,6 +22,7 @@ Namespace Microsoft.VisualStudio.Editors.Package
             Me.New(My.Resources.Microsoft_VisualStudio_Editors_Designer.RSE_Err_InternalException, Nothing)
         End Sub
 
+
         ''' <summary>
         ''' Constructor
         ''' </summary>
@@ -29,6 +30,7 @@ Namespace Microsoft.VisualStudio.Editors.Package
         Public Sub New(Message As String)
             Me.New(Message, Nothing)
         End Sub
+
 
         ''' <summary>
         ''' Constructor
@@ -39,6 +41,7 @@ Namespace Microsoft.VisualStudio.Editors.Package
             Me.New(My.Resources.Microsoft_VisualStudio_Editors_Designer.RSE_Err_InternalException, InnerException)
         End Sub
 
+
         ''' <summary>
         ''' Constructor
         ''' </summary>
@@ -47,6 +50,7 @@ Namespace Microsoft.VisualStudio.Editors.Package
         Public Sub New(Message As String, InnerException As Exception)
             MyBase.New(Message, InnerException)
         End Sub
+
 
 #Region "Serialization support"
 

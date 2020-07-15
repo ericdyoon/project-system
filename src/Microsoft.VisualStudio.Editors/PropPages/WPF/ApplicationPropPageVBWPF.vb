@@ -43,6 +43,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
         Private Const BUILDACTION_PAGE As String = "Page"
         Private Const BUILDACTION_APPLICATIONDEFINITION As String = "ApplicationDefinition"
 
+
 #Region "User-defined properties for this page"
 
         Private Const PROPID_StartupObjectOrUri As Integer = 100
@@ -238,6 +239,8 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
                         New Control() {TargetFrameworkLabel})
 
                     list.Add(TargetFrameworkPropertyControlData)
+
+
 
                     m_ControlData = list.ToArray()
                 End If
@@ -1276,6 +1279,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
             Next
         End Sub
 
+
         ''' <summary>
         ''' Gets all the files (as a list of StartupUri objects) in the project which are appropriate for the 
         '''   StartupUri property.
@@ -1533,6 +1537,8 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
 
             Return True
         End Function
+
+
 
 #End Region
 

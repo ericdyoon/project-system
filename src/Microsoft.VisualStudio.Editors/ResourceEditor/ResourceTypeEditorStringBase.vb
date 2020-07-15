@@ -13,9 +13,13 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
     Friend MustInherit Class ResourceTypeEditorStringBase
         Inherits ResourceTypeEditorInternalBase
 
+
+
         '======================================================================
         '= PROPERTIES =                                                       =
         '======================================================================
+
+
 
         ''' <summary>
         ''' Returns whether this resource type should be displayed in a string table or not.
@@ -28,11 +32,14 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Gets whether or not the strings handled by this resource type editor
         '''   are allowed to be edited by the user.
         ''' </summary>
         Public MustOverride ReadOnly Property StringValueCanBeEdited As Boolean
+
+
 
         ''' <summary>
         ''' Indicates whether the resources edited by this resource editor type are allowed to have their
@@ -45,9 +52,12 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         '======================================================================
         '= METHODS =                                                          =
         '======================================================================
+
+
 
         ''' <summary>
         ''' Gets the type name of the main resource type that this resource type editor handles
@@ -63,6 +73,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return GetType(String).AssemblyQualifiedName
         End Function
 
+
         ''' <summary>
         ''' Given a resource, returns a string formatted to display the value of the resource.  This is the inverse
         '''   of StringParseFormattedCellValue().
@@ -75,6 +86,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         '''   This function is not exposed publicly, because the class it is defined on is not public.
         ''' </remarks>
         Public MustOverride Function StringGetFormattedCellValue(Resource As Resource, ResourceValue As Object) As String
+
 
         ''' <summary>
         ''' Given a string, parses that string and converts it into a resource value.  This is the inverse

@@ -112,6 +112,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.TempPE
             Assert.True(queue.Pop()?.IgnoreFileWriteTime);
         }
 
+
         [Fact]
         public void Update_RemovesItems()
         {

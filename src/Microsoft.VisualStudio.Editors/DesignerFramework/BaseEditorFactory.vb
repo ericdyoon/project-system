@@ -13,7 +13,10 @@ Imports Microsoft.VisualStudio.TextManager.Interop
 
 Imports VsTextBufferClass = Microsoft.VisualStudio.TextManager.Interop.VsTextBufferClass
 
+
+
 Namespace Microsoft.VisualStudio.Editors.DesignerFramework
+
 
     ''' <summary>
     ''' This is the base editor factory for all designers in this assembly.  The
@@ -58,6 +61,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
     Friend MustInherit Class BaseEditorFactory
         Implements IVsEditorFactory, IDisposable
 
+
 #Region "Fields and Structures"
 
         Private _site As Object 'The site that owns this editor factory
@@ -65,6 +69,8 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
         Private ReadOnly _designerLoaderType As Type 'The type of designer loader to create.  Typically there is a separate designer loader class per editor factory (and therefore per designer type)
 
 #End Region
+
+
 
         ''' <summary>
         '''     Creates a new editor factory.
@@ -74,6 +80,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             _designerLoaderType = DesignerLoaderType
         End Sub
 
+
         ''' <summary>
         '''     Called by the VS shell before this editor is removed from the list of available
         '''     editor factories.
@@ -81,6 +88,8 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
         Public Overridable Function Close() As Integer Implements IVsEditorFactory.Close
             Dispose()
         End Function
+
+
 
         ''' <summary>
         ''' Creates a new native TextBuffer by CoCreating it from COM.
@@ -117,6 +126,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             Return TextStreamInstance
         End Function
 
+
         ''' <summary>
         ''' Given an existing docdata (if any), gets the correct DocData for use with a new
         '''   editor.  Default implementation: If there is an existing DocData and it's 
@@ -147,12 +157,14 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             Return TextStreamInstance
         End Function
 
+
         ''' <summary>
         ''' Called in base classes when the editor factory is sited.  Before this time, ServiceProvider will not be available (and
         '''   should not be assumed afterwards).
         ''' </summary>
         Protected Overridable Sub OnSited()
         End Sub
+
 
         ''' <summary>
         ''' Provides the (constant) GUID for the subclassed editor factory.
@@ -169,7 +181,9 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
         ''' </summary>
         Protected MustOverride ReadOnly Property CommandUIGuid As Guid
 
+
 #Region "Private implementation"
+
 
         ''' <summary>
         ''' Used by the editor factory architecture to create editors that support data/view separation (for example, 
@@ -269,6 +283,8 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 Return ex.ErrorCode
             End Try
         End Function
+
+
 
         ''' <summary>
         ''' Creates a new editor for the given pile of flags.  Helper function for the overload
@@ -442,12 +458,14 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             End Get
         End Property
 
+
         ''' <summary>
         '''     Called by the VS shell when it first initializes us.
         ''' </summary>
         Private Function IVsEditorFactory_SetSite(site As IServiceProvider) As Integer Implements IVsEditorFactory.SetSite
             SetSiteInternal(site)
         End Function
+
 
         ''' <summary>
         ''' Called by the VS shell when it first initializes us.  
@@ -474,6 +492,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
 
             OnSited()
         End Sub
+
 
 #Region "IDisposable standard pattern"
         ''' <summary>

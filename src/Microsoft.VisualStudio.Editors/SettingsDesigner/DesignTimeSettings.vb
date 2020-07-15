@@ -43,6 +43,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Is the UseMySettingsClassName flag set in the underlying .settings file?
         ''' If so, we may want to special-case the class name...
@@ -197,6 +198,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 Return name
             End If
         End Function
+
 
 #End Region
 

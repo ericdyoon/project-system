@@ -14,11 +14,12 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages
 {
     public abstract partial class PropertyPage : UserControl, IPropertyPage, IVsDebuggerEvents
     {
-        private IPropertyPageSite? _site;
-        private bool _isDirty;
+        private IPropertyPageSite? _site = null;
+        private bool _isDirty = false;
+        private readonly bool _ignoreEvents = false;
         private IVsDebugger? _debugger;
         private uint _debuggerCookie;
-        private bool _isActivated;
+        private bool _isActivated = false;
         private IProjectThreadingService? _threadHandling;
 
         // WIN32 Constants
@@ -42,7 +43,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages
             set
             {
                 // Only process real changes
-                if (value != _isDirty)
+                if (value != _isDirty && !_ignoreEvents)
                 {
                     _isDirty = value;
 

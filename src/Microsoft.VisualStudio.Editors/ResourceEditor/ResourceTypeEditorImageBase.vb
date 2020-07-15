@@ -26,6 +26,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Const EXT_GIF As String = ".gif"
         Public Const EXT_WMF As String = ".wmf"
 
+
+
         '======================================================================
         '= METHODS =                                                          =
         '======================================================================
@@ -46,6 +48,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return True
         End Function
 
+
         ''' <summary>
         ''' Saves a given resource value to a file.
         ''' </summary>
@@ -61,6 +64,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Image.Save(FilePath, Image.RawFormat)
             Debug.Assert(New IO.FileInfo(FilePath).Length > 0, "Saved file has zero length")
         End Sub
+
 
         ''' <summary>
         ''' Gets the proper file extension to use for a particular resource.  The extension returned
@@ -104,6 +108,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return EXT_BMP
         End Function
 
+
         ''' <summary>
         ''' Gets a friendly description to display to the user that indicates the type of a
         '''   particular resource.  E.g., "BMP Image".
@@ -140,6 +145,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return ""
         End Function
 
+
         ''' <summary>
         ''' Gets a friendly size to display to the user for this particular resource.  E.g., "240 x 160".
         ''' </summary>
@@ -152,6 +158,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return String.Format(My.Resources.Microsoft_VisualStudio_Editors_Designer.GetString(My.Resources.Microsoft_VisualStudio_Editors_Designer.RSE_GraphicSizeFormat, Image.Width, Image.Height))
         End Function
 
+
         ''' <summary>
         ''' Gets the prefix that is used for suggesting resource names to the user.  For instance,
         '''   if this function returns "id", then as the user asks to create a new resource
@@ -161,6 +168,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overrides Function GetSuggestedNamePrefix() As String
             Return "Image"
         End Function
+
 
         ''' <summary>
         ''' Check whether this resource item is valid and can be added to the content file.
@@ -196,6 +204,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
             Return MyBase.IsResourceItemValid(NewResource, ResourceContentFile, Message, HelpID)
         End Function
+
 
     End Class
 End Namespace

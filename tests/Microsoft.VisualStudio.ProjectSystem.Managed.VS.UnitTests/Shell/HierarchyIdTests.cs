@@ -140,6 +140,7 @@ namespace Microsoft.VisualStudio.Shell
             Assert.True(HierarchyId.Selection.IsSelection);
         }
 
+
         [Fact]
         public void Nil_IsNil_ReturnsTrue()
         {

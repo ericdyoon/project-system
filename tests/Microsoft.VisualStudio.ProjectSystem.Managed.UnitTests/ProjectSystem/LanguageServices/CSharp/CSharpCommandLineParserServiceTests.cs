@@ -23,6 +23,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.LanguageServices.CSharp
             Assert.Equal(expected.Split('|'), results.MetadataReferences.Select(r => r.Reference));
         }
 
+
         [Theory]
         [InlineData(@"Foo.cs",                                                                               @"C:\Project\Foo.cs")]
         [InlineData(@"Foo.cs|Bar.cs",                                                                        @"C:\Project\Foo.cs|C:\Project\Bar.cs")]

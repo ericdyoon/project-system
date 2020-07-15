@@ -5,6 +5,7 @@ Imports System.Xml
 
 Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
 
+
     ''' <summary>
     ''' Utility class to (de)serialize the contents of a DesignTimeSetting object 
     ''' given a stream reader/writer

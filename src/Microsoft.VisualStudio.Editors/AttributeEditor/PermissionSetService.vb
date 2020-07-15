@@ -201,6 +201,7 @@ Namespace Microsoft.VisualStudio.Editors.VBAttributeEditor
             End If
         End Function
 
+
         Private Shared Function StringToIdentityList(s As String) As String()
             Dim a() As String = s.Split(CChar(";"))
             For i As Integer = 0 To a.Length - 1
@@ -208,6 +209,7 @@ Namespace Microsoft.VisualStudio.Editors.VBAttributeEditor
             Next
             Return a
         End Function
+
 
     End Class
 

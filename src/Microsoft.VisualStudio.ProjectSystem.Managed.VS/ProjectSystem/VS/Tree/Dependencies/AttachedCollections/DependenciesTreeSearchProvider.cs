@@ -71,7 +71,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.Tree.Dependencies.AttachedColl
             Requires.NotNull(parameters, nameof(parameters));
             Requires.NotNull(resultAccumulator, nameof(resultAccumulator));
 
-            if (_providers.IsEmpty)
+            if (_providers.Length == 0)
             {
                 // No providers registered
                 return;

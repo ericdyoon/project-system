@@ -36,6 +36,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.Build
 
             public int LineNumber { get; set; }
 
+
             public int EndLineNumber { get; set; }
 
             /// <summary>

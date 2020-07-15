@@ -535,6 +535,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         End Function
 #End Region
 
+
         ''' <summary>
         ''' Host the UI type editor control given to use. 
         ''' </summary>

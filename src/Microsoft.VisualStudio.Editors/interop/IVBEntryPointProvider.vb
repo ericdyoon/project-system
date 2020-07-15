@@ -26,4 +26,5 @@ Namespace Microsoft.VisualStudio.Editors.Interop
 
     End Interface
 
+
 End Namespace

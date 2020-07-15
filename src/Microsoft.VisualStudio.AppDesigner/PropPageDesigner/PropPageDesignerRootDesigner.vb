@@ -43,6 +43,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             'GetView().CommitAnyPendingChanges()
         End Sub
 
+
         ''' <summary>
         ''' Called by the managed designer mechanism to determine what kinds of view technologies we support.
         ''' We currently support only Windows Forms technology (i.e., our designer view, ResourceEditorView,

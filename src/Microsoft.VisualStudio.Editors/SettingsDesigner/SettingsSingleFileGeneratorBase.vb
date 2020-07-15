@@ -23,6 +23,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         Private _codeDomProvider As CodeDomProvider
         Private _serviceProvider As ServiceProvider
 
+
         Private Const AddedHandlerFieldName As String = "addedHandler"
         Private Const AddedHandlerLockObjectFieldName As String = "addedHandlerLockObject"
         Private Const AutoSaveSubName As String = "AutoSaveSettings"
@@ -44,6 +45,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
 
         Friend Const DesignerGeneratedFileSuffix As String = ".Designer"
 
+
         ''' <summary>
         ''' If set to true, tells the shell that symbolic renames are OK. 
         ''' </summary>
@@ -54,7 +56,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         ''' 
         ''' Since all the file generation should happen on the main thread, it is OK to have this member shared...
         ''' </remarks>
-        Friend Shared AllowSymbolRename As Boolean
+        Friend Shared AllowSymbolRename As Boolean = False
 
         ''' <summary>
         ''' Returns the default visibility of this properties
@@ -115,6 +117,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         ''' <param name="pcbOutput"></param>
         ''' <param name="pGenerateProgress"></param>
         Private Function Generate(wszInputFilePath As String, bstrInputFileContents As String, wszDefaultNamespace As String, rgbOutputFileContents() As IntPtr, ByRef pcbOutput As UInteger, pGenerateProgress As IVsGeneratorProgress) As Integer Implements IVsSingleFileGenerator.Generate
+
 
             Dim BufPtr As IntPtr = IntPtr.Zero
             Try
@@ -895,6 +898,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         End Sub
 #End Region
 
+
 #Region "IVsRefactorNotify Implementation"
         ' ******************* Implement IVsRefactorNotify *****************
 
@@ -1064,6 +1068,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
 
 #End Region
 
+
 #Region "IServiceProvider"
 
         ''' <summary>
@@ -1079,6 +1084,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             End If
         End Function
 #End Region
+
 
     End Class
 End Namespace

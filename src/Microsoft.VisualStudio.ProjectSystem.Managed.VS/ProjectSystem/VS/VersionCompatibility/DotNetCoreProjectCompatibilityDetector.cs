@@ -243,6 +243,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS
             SolutionOpen = true;
         }
 
+
         /// <summary>
         /// Fired when the solution load process is fully complete, including all background loading
         /// of projects. This event always fires after the initial opening of a solution

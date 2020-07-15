@@ -21,6 +21,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
 
         '= Public =============================================================
 
+
         ''' <summary>
         ''' Displays a message box for a specified exception, caption, buttons, icons, default button and help link.
         ''' </summary>
@@ -37,6 +38,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
             Return Show(DirectCast(RootDesigner, IServiceProvider), Message, Caption, Buttons, Icon, DefaultButton, HelpLink)
         End Function 'Show
 
+
         ''' <summary>
         ''' Displays a message box for a specified exception, caption, buttons, icons, default button and help link.
         ''' </summary>
@@ -50,6 +52,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
 #Enable Warning RS0026 ' Do not add multiple public overloads with optional parameters
             Show(ServiceProvider, Nothing, ex, Caption, HelpLink)
         End Sub
+
 
         ''' <summary>
         ''' Displays a message box for a specified exception, caption, buttons, icons, default button and help link.
@@ -106,6 +109,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
             Show(ServiceProvider, Message, Caption, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, HelpLink)
         End Sub
 
+
         ''' <summary>
         ''' Displays a message box for a specified exception, caption, buttons, icons, default button and help link.
         ''' </summary>
@@ -125,6 +129,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
 #Enable Warning RS0026 ' Do not add multiple public overloads with optional parameters
             Return ShowHelper(ServiceProvider, Message, Caption, Buttons, Icon, DefaultButton, HelpLink)
         End Function 'Show
+
 
         ''' <summary>
         ''' Displays a message box for a specified exception, caption, buttons, icons, default button and help link.
@@ -165,6 +170,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesDesignerFramework
             ' If there is no IServiceProvider, message box has no parent.
             Return MessageBox.Show(Nothing, Message, Caption, Buttons, Icon, DefaultButton)
         End Function 'Show
+
 
         '= PROTECTED ==========================================================
 

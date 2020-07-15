@@ -147,6 +147,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Try
         End Function
 
+
         ''' <summary>
         ''' Disconnect from the owning site
         ''' </summary>

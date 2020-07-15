@@ -171,12 +171,9 @@ namespace Microsoft.VisualStudio.ProjectSystem.Tree.Dependencies.Snapshot
             sb.Append(Id);
             sb.Append('"');
 
-            if (Resolved)
-                sb.Append(" Resolved");
-            if (Implicit)
-                sb.Append(" Implicit");
-            if (Visible)
-                sb.Append(" Visible");
+            if (Resolved) sb.Append(" Resolved");
+            if (Implicit) sb.Append(" Implicit");
+            if (Visible) sb.Append(" Visible");
 
             return sb.ToStringAndFree();
         }

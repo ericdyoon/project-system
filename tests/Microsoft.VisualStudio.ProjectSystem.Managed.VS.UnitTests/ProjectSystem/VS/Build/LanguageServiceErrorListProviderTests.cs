@@ -228,6 +228,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.Build
             var provider = CreateInstance(host);
             await provider.AddMessageAsync(new TargetGeneratedError("Test", new BuildErrorEventArgs(null, code, "File", 0, 0, 0, 0, errorMessage, "HelpKeyword", "Sender")));
 
+
             Assert.Equal(errorMessage, errorMessageResult);
             Assert.Equal(code, errorIdResult);
         }
@@ -257,6 +258,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.Build
 
             var provider = CreateInstance(host);
             await provider.AddMessageAsync(new TargetGeneratedError("Test", new BuildErrorEventArgs(null, "Code", "File", lineNumber, columnNumber, 0, 0, "ErrorMessage", "HelpKeyword", "Sender")));
+
 
             Assert.Equal(expectedLineNumber, lineResult);
             Assert.Equal(expectedColumnNumber, columnResult);
@@ -288,6 +290,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.Build
 
             var provider = CreateInstance(host);
             await provider.AddMessageAsync(new TargetGeneratedError("Test", new BuildErrorEventArgs(null, "Code", "File", lineNumber, columnNumber, endLineNumber, endColumnNumber, "ErrorMessage", "HelpKeyword", "Sender")));
+
 
             Assert.Equal(expectedEndLineNumber, endLineResult);
             Assert.Equal(expectedEndColumnNumber, endColumnResult);

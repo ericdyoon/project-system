@@ -181,25 +181,25 @@
     <value>The errors on the page must be corrected prior to saving your changes.</value>
   </data>
   <data name="AddBtn" xml:space="preserve">
-    <value>_Add</value>
+    <value>Add</value>
   </data>
   <data name="ApplicationArguments" xml:space="preserve">
-    <value>Application ar_guments:</value>
+    <value>Application arguments:</value>
   </data>
   <data name="BrowseBtn" xml:space="preserve">
-    <value>_Browse...</value>
+    <value>Browse...</value>
   </data>
   <data name="DeleteBtn" xml:space="preserve">
-    <value>_Delete</value>
+    <value>Delete</value>
   </data>
   <data name="EnvironmentVariables" xml:space="preserve">
-    <value>Environ_ment variables:</value>
+    <value>Environment variables:</value>
   </data>
   <data name="Executable" xml:space="preserve">
-    <value>_Executable:</value>
+    <value>Executable:</value>
   </data>
   <data name="Launch" xml:space="preserve">
-    <value>_Launch:</value>
+    <value>Launch:</value>
   </data>
   <data name="LaunchURL" xml:space="preserve">
     <value>Launch browser:</value>
@@ -208,19 +208,19 @@
     <value>Name</value>
   </data>
   <data name="NewBtn" xml:space="preserve">
-    <value>_New...</value>
+    <value>New...</value>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>_Profile:</value>
+    <value>Profile:</value>
   </data>
   <data name="RemoveBtn" xml:space="preserve">
-    <value>_Remove</value>
+    <value>Remove</value>
   </data>
   <data name="ValueHeader" xml:space="preserve">
     <value>Value</value>
   </data>
   <data name="WorkingDirectory" xml:space="preserve">
-    <value>_Working directory:</value>
+    <value>Working directory:</value>
   </data>
   <data name="CancelBtn" xml:space="preserve">
     <value>Cancel</value>
@@ -247,16 +247,16 @@
     <value>Create the profile and return to the debug property page with the new profile selected</value>
   </data>
   <data name="chkNativeCodeDebuggingText" xml:space="preserve">
-    <value>Enable nati_ve code debugging</value>
+    <value>Enable native code debugging</value>
   </data>
   <data name="chkSqlCodeDebuggingText" xml:space="preserve">
-    <value>Enable _SQL Server debugging</value>
+    <value>Enable SQL Server debugging</value>
   </data>
   <data name="chkRemoteDebugEnabledHelpText" xml:space="preserve">
     <value>Enable remote debugging</value>
   </data>
   <data name="RemoteDebug" xml:space="preserve">
-    <value>_Use remote machine:</value>
+    <value>Use remote m_achine:</value>
   </data>
   <data name="RemoteDebugMachineWatermark" xml:space="preserve">
     <value>Remote machine host name</value>
@@ -268,9 +268,9 @@
     <value>The host name is invalid.</value>
   </data>
   <data name="FindBtn" xml:space="preserve">
-    <value>_Find...</value>
+    <value>Find...</value>
   </data>
   <data name="AuthenticationMode" xml:space="preserve">
-    <value>Au_thentication mode:</value>
+    <value>Authentication mode:</value>
   </data>
 </root>

@@ -13,6 +13,7 @@ Imports Microsoft.VisualStudio.Shell.Interop
 
 Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
+
     ''' <summary>
     ''' This class represents the root component of the resource editor.  It could be thought of as
     '''    representing the .resx file itself, except that we may handle more than one .resx file in 
@@ -26,6 +27,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
     <Designer(GetType(ResourceEditorRootDesigner), GetType(IRootDesigner))>
     Friend NotInheritable Class ResourceEditorRootComponent
         Inherits Component
+
 
 #Region "Fields"
 
@@ -53,7 +55,10 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         ' ASP.Net ProjectKind GUID
         Private Shared ReadOnly s_projectGuid_ASPDotNet As New Guid("E24C65DC-7377-472b-9ABA-BC803B73C61A")
 
+
 #End Region
+
+
 
 #Region "Constructors/destructors"
 
@@ -79,7 +84,10 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
+
 #Region "Properties"
+
 
         '*****************************************************************************************************
         '*****************************************************************************************************
@@ -93,6 +101,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         '*****************************************************************************************************
         '*****************************************************************************************************
 
+
         ''' <summary>
         ''' True iff the root component is being torn down or is already torn down.
         ''' </summary>
@@ -101,6 +110,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _tearingDown
             End Get
         End Property
+
 
         ''' <summary>
         ''' Gets the ResXResourceFile that is currently being edited.
@@ -171,6 +181,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Property
 
 #End Region
+
+
 
         ''' <summary>
         ''' Associates a ResXResourceFile (which represents a single editable .resx file) with this

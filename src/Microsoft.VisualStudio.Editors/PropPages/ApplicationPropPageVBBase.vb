@@ -71,6 +71,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             PopulateIconList(FindIconsInProject, CommonControls.IconCombobox, CType(GetControlValueNative(Const_ApplicationIcon), String))
         End Sub
 
+
         ''' <summary>
         ''' Populates the given application icon combobox with appropriate entries
         ''' </summary>
@@ -111,12 +112,14 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             ApplicationIconCombobox.Items.Insert(ApplicationIconCombobox.Items.Count - 1, IconRelativePath)
         End Sub
 
+
         ''' <summary>
         ''' Update the image displayed for the currently-selected application icon
         ''' </summary>
         Protected Overloads Sub UpdateIconImage(AddToProject As Boolean)
             UpdateIconImage(CommonControls.IconCombobox, CommonControls.IconPicturebox, AddToProject)
         End Sub
+
 
         ''' <summary>
         ''' Sets the icon path for the textbox
@@ -187,6 +190,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Sub
 
+
         ''' <summary>
         ''' Returns true if the text is the special "Browse" text for the icon combobox
         ''' </summary>
@@ -207,6 +211,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         ''' <summary>
         ''' Called after a property is changed through UI on this property page
         ''' </summary>
@@ -218,6 +223,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 OnRootNamespaceChanged(DTEProject, ServiceProvider, DirectCast(OldValue, String), DirectCast(NewValue, String))
             End If
         End Sub
+
 
         ''' <summary>
         ''' This gets called whenever the root namespace is changed via the property pages.  We have
@@ -323,6 +329,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             Private Shared ReadOnly s_references_CommandLineApp As String() = New String() {"System.Data", "System.Deployment", "System.Xml"}
             Private Shared ReadOnly s_references_WindowsService As String() = New String() {"System.Data", "System.Deployment", "System.ServiceProcess", "System.Xml"}
             Private Shared ReadOnly s_references_WebControl As String() = New String() {"System.Data", "System.Drawing", "System.Management", "System.Web", "System.Xml"}
+
 
             ''' <summary>
             ''' Create a new instance
@@ -472,6 +479,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         End Class
 
 #End Region
+
 
 #End Region
 

@@ -41,6 +41,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             _isConfigPage = IsConfigurationDependentPage
         End Sub
 
+
 #Region "Dispose/IDisposable"
 
         ''' <summary>
@@ -75,6 +76,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
 
 #End Region
 
+
         ''' <summary>
         ''' The GUID for the property page
         ''' </summary>
@@ -83,6 +85,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return _guid
             End Get
         End Property
+
 
         ''' <summary>
         ''' True if the page's properties can have different values in different configurations
@@ -93,6 +96,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' The exception that occurred while loading the page, if any
         ''' </summary>
@@ -101,6 +105,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return _loadException
             End Get
         End Property
+
 
         ''' <summary>
         ''' Returns the IPropertyPage for the property page
@@ -112,6 +117,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns the PropertyPageSite for the property page
         ''' </summary>
@@ -121,6 +127,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return _site
             End Get
         End Property
+
 
         ''' <summary>
         ''' Attempts to load the COM object for the property page, if it has not already
@@ -205,6 +212,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Try
         End Sub
 
+
         ''' <summary>
         ''' Retrieves the title for the property page.  This title is cached on the
         '''   machine after the first time we've loaded the property page, so calling 
@@ -241,6 +249,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Gets the current locale ID that's being used by the project designer.
         ''' </summary>
@@ -249,6 +258,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return CType(_parentView, IPropertyPageSiteOwner).GetLocaleID()
             End Get
         End Property
+
 
         ''' <summary>
         ''' Retrieves the name of the registry value name to place into the
@@ -261,6 +271,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return _guid.ToString() & "," & CurrentLocaleID.ToString()
             End Get
         End Property
+
 
         ''' <summary>
         ''' Attempts to retrieve or set the cached title of this page from the registry.

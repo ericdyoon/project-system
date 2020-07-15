@@ -16,6 +16,7 @@ Imports IOleDataObject = Microsoft.VisualStudio.OLE.Interop.IDataObject
 
 Namespace Microsoft.VisualStudio.Editors.DesignerFramework
 
+
     ''' <summary>
     ''' This class provides a Window pane provider service that can
     '''   create a DesignerWindowPaneBase
@@ -26,6 +27,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
 
         ' True if the toolbox should be supported
         Private ReadOnly _supportToolbox As Boolean
+
 
         ''' <summary>
         ''' Constructor
@@ -62,6 +64,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             ' True if toolbox support is to be enabled for this window pane
             Private ReadOnly _supportToolbox As Boolean
 
+
             ''' <summary>
             ''' Creates a new WinformsWindowPane.
             ''' </summary>
@@ -96,6 +99,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
 
             End Sub
 
+
             ''' <summary>
             ''' Returns the view control for the window pane.
             ''' </summary>
@@ -104,6 +108,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                     Return _view
                 End Get
             End Property
+
 
             ''' <summary>
             '''     This method is called when Visual Studio needs to
@@ -126,6 +131,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 Return MyBase.GetToolboxItemSupported(toolboxItem)
             End Function
 
+
             ''' <summary>
             ''' Retrieves our view.
             ''' </summary>
@@ -142,6 +148,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                     Return _view
                 End Get
             End Property
+
 
             ''' <summary>
             ''' Called to disable OLE undo.
@@ -161,6 +168,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                     _undoEngine = Nothing
                 End If
             End Sub
+
 
             ''' <summary>
             ''' Called when our view is disposed.
@@ -199,6 +207,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 End Try
             End Sub
 
+
             ''' <summary>
             ''' Called to enable OLE undo.
             ''' </summary>
@@ -221,6 +230,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 End If
             End Sub
 
+
             ''' <summary>
             ''' We override this to enable / disable undo.  The undo engine
             ''' should be disabled if our view is cached for later.
@@ -229,6 +239,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 DisableUndo()
                 MyBase.OnClose()
             End Sub
+
 
             ''' <summary>
             ''' We override this to enable / disable undo.  The undo engine
@@ -243,6 +254,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 End If
             End Sub
 
+
             ''' <summary>
             ''' Called when the surface finishes loading.  Here we fish the view
             ''' out of the surface and also handle the white screen of darn.
@@ -255,6 +267,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 'ChangeFormEditorCaption()
             End Sub
 
+
             ''' <summary>
             ''' Called when the surface unloads.  During unload we disable
             ''' the undo engine until we have successfully reloaded.
@@ -264,6 +277,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             Private Sub OnSurfaceUnloading(sender As Object, e As EventArgs)
                 DisableUndo()
             End Sub
+
 
             ''' <summary>
             '''     Called when the surface has completed its unload.  If our view
@@ -284,6 +298,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 End If
             End Sub
 
+
             ''' <summary>
             ''' Called when an undo action is about to happen.  We freeze painting here.
             ''' </summary>
@@ -296,6 +311,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                     Cursor.Current = Cursors.WaitCursor
                 End If
             End Sub
+
 
             ''' <summary>
             ''' Called when an undo action is done.  We unfreeze painting here.
@@ -310,6 +326,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                     _undoCursor = Nothing
                 End If
             End Sub
+
 
             ''' <summary>
             ''' Our view always hands focus to its child.  
@@ -337,6 +354,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
 #End If
                 End If
             End Sub
+
 
             ''' <summary>
             ''' This takes our control UI and populates it with the
@@ -401,6 +419,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 _view.ResumeLayout()
             End Sub
 
+
 #Region "IVsWindowPaneCommit"
             ''' <summary>
             ''' Allow us to commit pending changes before we receive a command such as Undo or when
@@ -457,6 +476,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
         End Class
 
     End Class
+
 
 End Namespace
 

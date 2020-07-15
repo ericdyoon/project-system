@@ -61,7 +61,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Add.
+        ///   Looks up a localized string similar to Add.
         /// </summary>
         public static string AddBtn {
             get {
@@ -79,7 +79,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application ar_guments:.
+        ///   Looks up a localized string similar to Application arguments:.
         /// </summary>
         public static string ApplicationArguments {
             get {
@@ -97,7 +97,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Au_thentication mode:.
+        ///   Looks up a localized string similar to Authentication mode:.
         /// </summary>
         public static string AuthenticationMode {
             get {
@@ -106,7 +106,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Browse....
+        ///   Looks up a localized string similar to Browse....
         /// </summary>
         public static string BrowseBtn {
             get {
@@ -142,7 +142,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable nati_ve code debugging.
+        ///   Looks up a localized string similar to Enable native code debugging.
         /// </summary>
         public static string chkNativeCodeDebuggingText {
             get {
@@ -160,7 +160,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enable _SQL Server debugging.
+        ///   Looks up a localized string similar to Enable SQL Server debugging.
         /// </summary>
         public static string chkSqlCodeDebuggingText {
             get {
@@ -178,7 +178,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Delete.
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DeleteBtn {
             get {
@@ -205,7 +205,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Environ_ment variables:.
+        ///   Looks up a localized string similar to Environment variables:.
         /// </summary>
         public static string EnvironmentVariables {
             get {
@@ -241,7 +241,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Executable:.
+        ///   Looks up a localized string similar to Executable:.
         /// </summary>
         public static string Executable {
             get {
@@ -268,7 +268,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Find....
+        ///   Looks up a localized string similar to Find....
         /// </summary>
         public static string FindBtn {
             get {
@@ -286,7 +286,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Launch:.
+        ///   Looks up a localized string similar to Launch:.
         /// </summary>
         public static string Launch {
             get {
@@ -331,7 +331,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _New....
+        ///   Looks up a localized string similar to New....
         /// </summary>
         public static string NewBtn {
             get {
@@ -385,7 +385,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Profile:.
+        ///   Looks up a localized string similar to Profile:.
         /// </summary>
         public static string Profile {
             get {
@@ -457,7 +457,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Use remote machine:.
+        ///   Looks up a localized string similar to Use remote m_achine:.
         /// </summary>
         public static string RemoteDebug {
             get {
@@ -484,7 +484,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Remove.
+        ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string RemoveBtn {
             get {
@@ -511,7 +511,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PropertyPages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to _Working directory:.
+        ///   Looks up a localized string similar to Working directory:.
         /// </summary>
         public static string WorkingDirectory {
             get {

@@ -97,6 +97,7 @@ Imports System.Runtime.InteropServices
 <Assembly: TypeForwardedTo(GetType(Microsoft.VisualStudio.Editors.PropertyPages.VBPropPageBase))>
 <Assembly: TypeForwardedTo(GetType(Microsoft.VisualStudio.Editors.PropertyPages.VSProductSKU))>
 
+
 <Assembly: TypeForwardedTo(GetType(Microsoft.VisualStudio.Editors.PropPageDesigner.ConfigurationState))>
 <Assembly: TypeForwardedTo(GetType(Microsoft.VisualStudio.Editors.PropPageDesigner.DeferrableWindowPaneProviderService))>
 <Assembly: TypeForwardedTo(GetType(Microsoft.VisualStudio.Editors.PropPageDesigner.MultipleValuesStore))>

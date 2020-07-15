@@ -48,6 +48,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             _isReadOnly = _propDesc.IsReadOnly
         End Sub
 
+
         ''' <summary>
         ''' Returns the type of the instance this property is bound to, which is PropPageDesignerRootComponent.
         ''' </summary>
@@ -57,6 +58,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
                 Return GetType(PropPageDesignerRootComponent)
             End Get
         End Property
+
 
         ''' <summary>
         '''  Returns a value indicating whether this property is read-only.
@@ -68,6 +70,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns the type of the property.
         ''' </summary>
@@ -77,6 +80,8 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
                 Return _propertyType
             End Get
         End Property
+
+
 
         ''' <summary>
         '''  Gets the current value of the property on the specified PropPageDesignerRootComponent instance.
@@ -94,6 +99,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
                 Throw AppDesCommon.CreateArgumentException(NameOf(Component))
             End If
         End Function
+
 
         ''' <summary>
         '''  Sets the value of the property on the specified component instance to a different value.
@@ -115,6 +121,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             End If
         End Sub
 
+
         ''' <summary>
         '''  Indicates whether the value of this property needs to be persisted.
         ''' </summary>
@@ -124,6 +131,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
         Public Overrides Function ShouldSerializeValue(Component As Object) As Boolean
             Return False
         End Function
+
 
         ''' <summary>
         '''  Indicates whether resetting an object changes its value.
@@ -192,6 +200,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             End If
             Return Nothing
         End Function
+
 
     End Class
 

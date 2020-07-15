@@ -36,6 +36,7 @@ Namespace Microsoft.VisualStudio.Editors.MyExtensibility
 
             Dim templateID As String
 
+
             Dim templateVersion As Version
 
             Dim assemblyFullName As String

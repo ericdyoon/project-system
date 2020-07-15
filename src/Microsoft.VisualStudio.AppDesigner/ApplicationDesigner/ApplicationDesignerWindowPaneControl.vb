@@ -9,6 +9,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
     Public NotInheritable Class ApplicationDesignerWindowPaneControl
         Inherits UserControl
 
+
         ''' <summary>
         ''' Constructor.
         ''' </summary>

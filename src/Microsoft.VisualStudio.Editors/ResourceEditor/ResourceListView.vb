@@ -127,6 +127,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         ' Detail View Column Count
         Private Const DETAIL_VIEW_COLUMN_COUNT As Integer = 5
 
+
 #End Region
 
         ''' <summary>
@@ -140,6 +141,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
         End Enum
 
+
+
         ''' <summary>
         ''' Column in the detail view
         ''' </summary>
@@ -152,9 +155,12 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Comment = 4
         End Enum
 
+
         '======================================================================
         '= Constructors/Destructors =                                         =
         '======================================================================
+
+
 
         ''' <summary>
         ''' Constructor.
@@ -176,6 +182,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
             Common.DTEUtils.ApplyListViewThemeStyles(Handle)
         End Sub
+
 
         ''' <summary>
         ''' Overrides Dispose to do clean-up of managed resources
@@ -206,9 +213,14 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             MyBase.Dispose(Disposing)
         End Sub
 
+
+
+
         '======================================================================
         '= Properties =                                                       =
         '======================================================================
+
+
 
         ''' <summary>
         ''' The current view of the listview (in ResourceView terms - shadows the
@@ -242,6 +254,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Set
         End Property
 
+
         ''' <summary>
         ''' If this is turned on, attempted retrieval of listview items will simply return
         '''   a blank entry.  This is useful when the resource editor is being disposed of.
@@ -269,6 +282,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Gets the ResourceFile that was used to populate this listview.
         ''' </summary>
@@ -280,9 +294,12 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         '======================================================================
         '= Methods =                                                          =
         '======================================================================
+
+
 
 #Region "UI-Related Features"
         Private _columnInitialized As Boolean
@@ -317,6 +334,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
         End Sub
 
+
         ''' <summary>
         ''' Clear all entries from the listview.
         ''' </summary>
@@ -337,6 +355,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 _stateImageList = Nothing
             End If
         End Sub
+
 
         ''' <summary>
         ''' Populates the listview from a ResourceFile, adding all resources
@@ -435,6 +454,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             ParentView.RootDesigner.InvalidateFindLoop(False)
         End Sub
 
+
         ''' <summary>
         ''' Invalidates a single listitem corresponding to a given Resource.  This area of the listview will be
         '''   refreshed in a later paint message.
@@ -461,6 +481,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Occurs when the user tries to go into label edit mode to change the resource name
         ''' </summary>
@@ -480,6 +501,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 ParentView.DsMsgBox(ex)
             End Try
         End Sub
+
 
         ''' <summary>
         ''' Occurs when the label for an item is edited by the user.
@@ -522,6 +544,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Try
         End Sub
 
+
         ''' <summary>
         ''' Causes the listview to go into label edit mode
         ''' </summary>
@@ -538,6 +561,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 End If
             End If
         End Sub
+
 
         ''' <summary>
         ''' Commits all pending changes that the user has made in the grid.
@@ -643,6 +667,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Using
         End Sub
 
+
         ''' <summary>
         '''  Set the column header image to indicate the column has been used to sort the whole list
         ''' </summary>
@@ -724,6 +749,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Sub
 
 #End Region
+
 
 #Region "Virtual ListView Handling"
 
@@ -976,6 +1002,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             'We also need to fill in the sub items (the additional columns in a details view)
             If View = ResourceView.Details Then
 
+
                 Dim LinkFileName As String
                 If Resource.IsLink Then
                     LinkFileName = Resource.RelativeLinkPathAndFileName
@@ -1042,6 +1069,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return String.Empty
         End Function
 
+
+
         ''' <summary>
         ''' Given a particular Resource, creates or finds a thumbnail for it in the thumbnail cache,
         '''   and returns an index into the imagelist for that thumbnail.
@@ -1105,6 +1134,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 End If
             End If
 
+
             'Create a thumbnail of the correct size for the image.
             Dim ThumbnailSize As Size = _thumbnailImageList.ImageSize
             Dim Thumbnail As Bitmap
@@ -1133,6 +1163,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Using
         End Function
 
+
         ''' <summary>
         ''' Given an index into our virtual resource list, retrieve the Resource for that index.
         '''   Note that resource indices change when resources are added/removed from this
@@ -1151,6 +1182,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return DirectCast(_virtualResourceList(Index), Resource)
         End Function
 
+
         ''' <summary>
         ''' Gets the ListViewItem index of a given resource
         ''' </summary>
@@ -1163,6 +1195,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Function
 
 #End Region
+
 
 #Region "Selections and Highlighting"
 
@@ -1185,6 +1218,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Debug.Assert(Selected IsNot Nothing)
             Return Selected
         End Function
+
 
         ''' <summary>
         ''' Highlights a given resource (selects it and scrolls the listview so that it's visible)
@@ -1234,6 +1268,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Private Const LVIF_STATE As Integer = &H8
         Private Const LVIS_SELECTED As Integer = &H2
         Private Const LVM_SETITEMSTATE As Integer = &H1000 + 43
+
 
         Private Sub SetItemState(index As Integer, state As Integer, mask As Integer)
             If index < 0 OrElse index >= VirtualListSize Then
@@ -1287,6 +1322,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 #End If
 
 #End Region
+
 
 #Region "Adding/Removing Resources"
 
@@ -1422,6 +1458,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Private Shared Function GetColumnValue(obj As Resource, column As Integer) As String
                 Return GetDetailViewColumn(obj, column)
             End Function
+
 
         End Class
 

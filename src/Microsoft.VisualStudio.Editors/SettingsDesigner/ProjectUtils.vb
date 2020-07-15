@@ -84,6 +84,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner.ProjectUtils
             Return sectionName
         End Function
 
+
         ''' <summary>
         ''' Get the namespace for the generated file...
         ''' </summary>
@@ -139,6 +140,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner.ProjectUtils
             Return False
 
         End Function
+
 
         ''' <summary>
         ''' Open a document that contains a class that expands the generated settings class, creating a new
@@ -338,6 +340,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner.ProjectUtils
 
             Return AddTo.AddFromFileCopy(NewFilePath)
         End Function
+
 
         Friend Interface IFindFilter
             Function IsMatch(Element As EnvDTE.CodeElement) As Boolean
@@ -559,6 +562,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner.ProjectUtils
             Return Nothing
         End Function
 
+
         ''' <summary>
         ''' Find the first CodeElement int the ProjectItem's FileCodeModel that satisfies the given filter
         ''' </summary>
@@ -678,6 +682,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner.ProjectUtils
             ct.Members.Add(changingStub)
             ct.Members.Add(savingStub)
         End Sub
+
 
         ''' <summary>
         ''' Create a comment statement from a "normal" code statement

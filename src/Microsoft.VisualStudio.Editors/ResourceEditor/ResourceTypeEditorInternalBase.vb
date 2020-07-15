@@ -17,6 +17,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
     Friend MustInherit Class ResourceTypeEditorInternalBase
         Inherits ResourceTypeEditor
 
+
         ''' <summary>
         ''' Given a list of extensions, returns true if a given extension is among them (case-insensitive)
         ''' </summary>
@@ -40,6 +41,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return False
         End Function
 
+
         ''' <summary>
         ''' Given a single filter text and a set of extensions, creates a single filter entry
         '''   for a file dialog.
@@ -49,6 +51,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Protected Shared Function CreateSingleDialogFilter(FilterText As String, Extensions() As String) As String
             Return Common.CreateDialogFilter(FilterText, Extensions)
         End Function
+
 
         ''' <summary>
         ''' Given a resource id from the manifest, saves the data in that resource into a file.
@@ -74,6 +77,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Throw New InternalException(My.Resources.Microsoft_VisualStudio_Editors_Designer.RSE_Err_Unexpected_NoResource_1Arg)
             End If
         End Sub
+
 
         ''' <summary>
         ''' Handles GetResourceFriendlySize for linked resources (for which returning the size of the file on disk

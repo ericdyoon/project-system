@@ -76,6 +76,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.Debug
                     {
                         resolvedProfile.OtherSettings = resolvedProfile.OtherSettings.SetItem(key, await ReplaceTokensInStringAsync(s, true));
                     }
+
                 }
             }
 

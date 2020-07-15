@@ -141,7 +141,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.Tree.Dependencies.Snapshot
                 if (dependency != null)
                 {
                     // A dependency was accepted
-                    DependencyId id = dependencyModel.GetDependencyId();
+                    var id = dependencyModel.GetDependencyId();
                     dependencyById.Remove(id);
                     dependencyById.Add(id, dependency);
                     anyChanges = true;

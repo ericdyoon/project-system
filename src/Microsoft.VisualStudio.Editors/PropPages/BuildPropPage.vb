@@ -21,7 +21,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
         Protected DocumentationFile() As String
         'True when we're changing control values ourselves
-        Protected InsideInternalUpdate As Boolean
+        Protected InsideInternalUpdate As Boolean = False
 
         ' Stored conditional compilation symbols. We need these to calculate the new strings
         '   to return for the conditional compilation constants when the user changes any
@@ -53,6 +53,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 New ComboItem("warnings", My.Resources.Microsoft_VisualStudio_Editors_Designer.PPG_BuildSettings_Nullable_Warnings),
                 New ComboItem("annotations", My.Resources.Microsoft_VisualStudio_Editors_Designer.PPG_BuildSettings_Nullable_Annotations)})
         End Sub
+
 
         Public Enum TreatWarningsSetting
             WARNINGS_ALL
@@ -697,6 +698,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Sub
 
+
         ''' <summary>
         ''' Fired when the conditional compilations constants textbox has changed.  We are manually handling
         '''   events associated with this control, so we need to recalculate related values
@@ -745,6 +747,9 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         '  the virtual "DEBUG" and "TRACE" properties that we've created, so the undo/redo descriptions for changes to these
         '  properties will always just say "DefineConstants"
 
+
+
+
         ''' <summary>
         ''' Fired when the conditional compilations constants textbox has changed.  We are manually handling
         '''   events associated with this control, so we need to recalculate related values
@@ -779,6 +784,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 '  to TextChanged and will mark it dirty, and will make sure it's persisted on LostFocus.
             End If
         End Sub
+
 
         ''' <summary>
         ''' Fired when the "Define DEBUG Constant" check has changed.  We are manually handling
@@ -815,6 +821,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Sub
 
+
         ''' <summary>
         ''' Fired when the "Define DEBUG Constant" check has changed.  We are manually handling
         '''   events associated with this control, so we need to recalculate related values.
@@ -837,6 +844,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 SetDirty(VsProjPropId.VBPROJPROPID_DefineConstants, True)
             End If
         End Sub
+
 
         ''' <summary>
         ''' Given DefineConstants string, parse it into a DEBUG value, a TRACE value, and everything else
@@ -865,6 +873,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 TraceDefined = False
             End If
         End Sub
+
 
         ''' <summary>
         ''' Multi-value setter for the conditional compilation constants value.  We parse the values and determine
@@ -949,6 +958,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             Return True
         End Function
 
+
         ''' <summary>
         ''' Multi-value getter for the conditional compilation constants values.
         ''' </summary>
@@ -959,6 +969,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             CondCompSymbols.CopyTo(values, 0)
             Return True
         End Function
+
 
         ''' <summary>
         ''' Searches in the RawPropertiesObjects for a configuration object whose name matches the name passed in,
@@ -998,6 +1009,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             Return -1
         End Function
 
+
         ''' <summary>
         ''' Returns whether or not we're in simplified config mode for this project, which means that
         '''   we hide the configuration/platform comboboxes.
@@ -1005,6 +1017,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         Public Function IsSimplifiedConfigs() As Boolean
             Return ShellUtil.GetIsSimplifiedConfigMode(ProjectHierarchy)
         End Function
+
 
         ''' <summary>
         ''' Given a string containing conditional compilation constants, adds the given constant to it, if it
@@ -1033,6 +1046,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             If Not bFound Then
                 ' Add it to the beginning
                 Dim stNewConstants As String = stSymbol
+
 
                 If stOldCondCompConstants <> "" Then
                     stNewConstants += ";"
@@ -1067,6 +1081,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
             Return False
         End Function
+
 
         ''' <summary>
         ''' Given a string containing conditional compilation constants, removes the given constant from it, if it

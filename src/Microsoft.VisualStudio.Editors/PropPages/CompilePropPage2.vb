@@ -102,6 +102,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             _optionStrictComboBoxUpdateQueued = True
         End Sub
 
+
         ''' <summary>
         ''' Update the text (and possibly the contents) of the option strict combobox
         ''' This method does *not* change the underlying property, it only updates the
@@ -460,6 +461,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             MyBase.SetObjects(objects)
         End Sub
 
+
 #Region "Pre/post init page"
 
         ''' <summary>
@@ -499,6 +501,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                     End If
                 Next
             End If
+
 
             _optionStrictCustomText = My.Resources.Microsoft_VisualStudio_Editors_Designer.PPG_Compile_OptionStrict_Custom
 
@@ -692,6 +695,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
 #End Region
 
         Private Sub DisableAllWarningsCheckBox_Checked(sender As Object, e As EventArgs) Handles DisableAllWarningsCheckBox.CheckStateChanged
@@ -788,6 +792,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 RefreshEnabledStatusForPrefer32Bit(Prefer32BitCheckBox)
             End If
         End Sub
+
 
         ''' <summary>
         ''' Disables warnings which are not generated when Option Strict is on
@@ -932,6 +937,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             Return result.ToArray()
         End Function
 
+
         ''' <summary>
         ''' Return the union of the two *sorted* arrays set1 and set2
         ''' </summary>
@@ -973,6 +979,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
             Return result.ToArray()
         End Function
+
 
         ''' <summary>
         ''' Remove any items in itemsToRemove from completeSet
@@ -1265,6 +1272,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
             MyBase.PreApplyPageChanges()
         End Sub
+
 
         ''' <summary>
         ''' Check if the path is a trusted path or not

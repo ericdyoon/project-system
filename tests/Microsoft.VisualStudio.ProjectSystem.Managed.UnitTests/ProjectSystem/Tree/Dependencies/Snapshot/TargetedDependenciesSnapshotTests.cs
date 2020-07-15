@@ -140,6 +140,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.Tree.Dependencies.Snapshot
             changes.Added(resolved);
             changes.Added(unresolved);
 
+
             var snapshot = TargetedDependenciesSnapshot.FromChanges(
                 previousSnapshot,
                 changes.TryBuildChanges()!,

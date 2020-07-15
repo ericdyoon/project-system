@@ -127,6 +127,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             End Try
         End Sub
 
+
         ''' <summary>
         ''' Disconnect from the owning site
         ''' </summary>

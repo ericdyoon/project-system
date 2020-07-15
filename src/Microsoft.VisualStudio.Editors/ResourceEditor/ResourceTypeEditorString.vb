@@ -15,9 +15,13 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
     Friend NotInheritable Class ResourceTypeEditorString
         Inherits ResourceTypeEditorStringBase
 
+
+
         '======================================================================
         '= PROPERTIES =                                                       =
         '======================================================================
+
+
 
         ''' <summary>
         ''' Gets whether or not the strings handled by this resource type editor
@@ -29,9 +33,15 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
+
+
         '======================================================================
         '= METHODS =                                                          =
         '======================================================================
+
+
+
 
         ''' <summary>
         ''' Given a resource, returns a string formatted to display the value of the resource.  This is the inverse
@@ -56,6 +66,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return DirectCast(ResourceValue, String)
         End Function
 
+
         ''' <summary>
         ''' Given a string, parses that string and converts it into a resource value.  This is the inverse
         '''   of StringGetFormatted().
@@ -78,6 +89,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return FormattedValue
         End Function
 
+
         ''' <summary>
         ''' Gets the prefix that is used for suggesting resource names to the user.  For instance,
         '''   if this function returns "id", then as the user asks to create a new resource
@@ -87,6 +99,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overrides Function GetSuggestedNamePrefix() As String
             Return "String"
         End Function
+
 
     End Class
 

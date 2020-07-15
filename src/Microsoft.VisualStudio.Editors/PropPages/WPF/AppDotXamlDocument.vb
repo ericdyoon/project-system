@@ -67,6 +67,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
                 CharIndex = charOnLineIndex
             End Sub
 
+
             ''' <summary>
             ''' Creates a location corresponding to the current location of the
             ''' XmlReader
@@ -165,6 +166,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
             Private ReadOnly _unescapedValue As String 'Unescaped, translated value of the property from the XmlReader
             Private ReadOnly _startLocation As Location
             Private ReadOnly _endLocationPlusOne As Location 'Points to the index *after* the last character in the range, just like IVsTextLines expects
+
 
             Public Sub New(vsTextLines As IVsTextLines, startLocation As Location, endLocation As Location, unescapedValue As String, definitionIncludesQuotes As Boolean)
                 Requires.NotNull(vsTextLines, NameOf(vsTextLines))
@@ -272,6 +274,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
 
             'This class represents a property that was found in property element syntax with an empty tag,
             '  e.g. <Application.StartupUri/>
+
 
             Private ReadOnly _fullyQualifiedPropertyName As String
 
@@ -939,6 +942,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages.WPF
         End Sub
 
 #End Region
+
 
 #Region "StartupUri"
 

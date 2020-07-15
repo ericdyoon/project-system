@@ -56,7 +56,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS
 
         private ProjectType? GetCurrentProjectType()
         {
-            Assumes.True(!s_projectTypes.IsEmpty);
+            Assumes.True(s_projectTypes.Length > 0);
 
             string extension = Path.GetExtension(_project.FullPath);
 

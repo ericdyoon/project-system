@@ -64,6 +64,7 @@ namespace Microsoft.VisualStudio.ProjectSystem
             AssertThrows(input, ProjectTreeFormatError.IdExpected_EncounteredEndOfString);
         }
 
+
         [Theory]
         [InlineData(@"Root, FilePath:")]
         [InlineData(@"Root, FilePath: ""C:\Temp"",")]
@@ -90,6 +91,7 @@ namespace Microsoft.VisualStudio.ProjectSystem
         {
             AssertThrows(input, ProjectTreeFormatError.DelimiterExpected);
         }
+
 
         [Theory]
         [InlineData(@"Root, FilePath,")]
@@ -360,6 +362,7 @@ Root[caption]
         {
             AssertProjectTree(input, expected, ProjectTreeWriterOptions.None);
         }
+
 
         [Theory]
         [InlineData(@"

@@ -13,6 +13,7 @@ Imports NativeMethods = Microsoft.VisualStudio.Editors.AppDesInterop.NativeMetho
 
 Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
+
 #Region "Internal interface definitions"
 
     ' ******************
@@ -32,6 +33,8 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
     '
     ' *******************
 
+
+
     ''' <summary>
     ''' This is an interface interface used to communicate between the PropPageBase class and any property pages (those that inherit
     '''   from PropPageUserControlBase).
@@ -49,6 +52,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
     End Interface
 
+
     ''' <summary>
     ''' This is an interface interface that subclasses of PropPageUserControlBase use to communicate with their site (PropPageBaseClass)
     '''   (i.e., it is internal to our property page implementation - public for those assemblies that have classes that inherit from
@@ -64,12 +68,14 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         ReadOnly Property IsImmediateApply As Boolean
     End Interface
 
+
     <Flags, ComVisible(False)>
     Public Enum PROPPAGESTATUS
         Dirty = 1
         Validate = 2
         Clean = 4
     End Enum
+
 
 #If False Then 'Not currently needed by any pages, consider exposing if needed in the future
     <ComVisible(False)> _
@@ -78,7 +84,9 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
     End Interface
 #End If
 
+
 #End Region
+
 
 #Region "PropPageBase"
 
@@ -101,7 +109,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         Private _objects As Object()
         Private _prevParent As IntPtr
         Private _dispidFocus As Integer
-        Private _hostedInNative As Boolean
+        Private _hostedInNative As Boolean = False
         Private _wasSetParentCalled As Boolean
 
         Protected Sub New()
@@ -117,6 +125,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Sub
 
+
         Protected Function GetLocaleID() As Integer Implements IPropertyPageSiteInternal.GetLocaleID
             Dim localeID As UInteger
             If _pageSite IsNot Nothing Then
@@ -126,6 +135,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
             Return CType(localeID, Integer)
         End Function
+
 
         ''' <summary>
         ''' Instructs the page site to process a keystroke if it desires.
@@ -171,6 +181,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             Return Nothing
         End Function
 
+
         ''' <summary>
         ''' Returns whether or not the property page hosted in this site should be with 
         '''   immediate-apply mode or not
@@ -183,16 +194,19 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
 #End Region
+
 
         Protected Overridable Property DocString As String
             Get
                 Return _docString
             End Get
             Set
-                _docString = Value
+                _docString = value
             End Set
         End Property
+
 
         Protected MustOverride ReadOnly Property ControlType As Type
 
@@ -202,6 +216,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         Protected MustOverride ReadOnly Property Title As String
 
         Protected Overridable Property HelpFile As String
@@ -209,16 +224,17 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Return _helpFile
             End Get
             Set
-                _helpFile = Value
+                _helpFile = value
             End Set
         End Property
+
 
         Protected Overridable Property HelpContext As UInteger
             Get
                 Return _helpContext
             End Get
             Set
-                _helpContext = Value
+                _helpContext = value
             End Set
         End Property
 
@@ -236,9 +252,10 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Return _defaultSize
             End Get
             Set
-                _defaultSize = Value
+                _defaultSize = value
             End Set
         End Property
+
 
         Protected Overridable ReadOnly Property Objects As Object()
             Get
@@ -251,6 +268,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Return False
             End Get
         End Property
+
 
         Private Sub IPropertyPage2_Activate(hWndParent As IntPtr, pRect() As RECT, bModal As Integer) Implements IPropertyPage2.Activate, IPropertyPage.Activate
 
@@ -293,6 +311,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
 
         End Sub
+
 
         Private Function IPropertyPage_Apply() As Integer Implements IPropertyPage.Apply
             Apply()
@@ -448,6 +467,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
 
         End Sub
 
+
         ''' <summary>
         ''' Sets the help context into the help service for this property page.
         ''' </summary>
@@ -475,6 +495,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Debug.Fail("Page site not a service provider - can't set help context for page")
             End If
         End Sub
+
 
         ''' <summary>
         ''' Instructs the property page to process the keystroke described in pMsg.
@@ -586,6 +607,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Try
         End Function
 
+
 #Region "IVsProjectDesignerPage"
         Private _propPageUndoSite As IVsProjectDesignerPageSite
 
@@ -603,6 +625,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             Return Nothing
         End Function
 
+
         ''' <summary>
         ''' Tells the property page to set the given value for the given property.  This is called during Undo and Redo operations.  The
         '''   page should also update its UI for the given property.
@@ -615,6 +638,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Page.SetProperty(PropertyName, Value)
             End If
         End Sub
+
 
         ''' <summary>
         ''' Notifies the property page of the IVsProjectDesignerPageSite
@@ -644,6 +668,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Function
 
+
         ''' <summary>
         ''' Gets the current values for the given property, one for each of the objects (configurations) that may be affected by a property
         '''   change and need to be remembered for Undo purposes.  The set of objects passed back normally should be the same objects that
@@ -666,6 +691,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Function
 
+
         ''' <summary>
         ''' Tells the property page to set the given values for the given properties, one for each of the objects (configurations) passed
         '''   in.  This property is called if the corresponding previous call to GetPropertyMultipleValues succeeded, otherwise
@@ -682,6 +708,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
         End Sub
 
+
         ''' <summary>
         ''' Finish all pending validations
         ''' </summary>
@@ -693,6 +720,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End If
             Return True
         End Function
+
 
         ''' <summary>
         ''' Called when the page is activated or deactivated
@@ -725,6 +753,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
     End Class
 
 #End Region
+
 
 #Region "VBPropPageBase"
 

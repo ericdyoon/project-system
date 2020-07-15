@@ -135,6 +135,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 End If
             Next
 
+
             ' Check if we need to add/change any application scoped settings
             '
             For Each SettingsValue As SettingsPropertyValue In DeserializedAppScopedSettingValues
@@ -251,6 +252,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             Dim FullyQualifiedClassName As String = ProjectUtils.FullyQualifiedClassName(NamespaceName, ClassName)
             Serialize(Settings, typeCache, valueCache, ConfigHelperService.GetSectionName(FullyQualifiedClassName, String.Empty), AppConfigDocData, Hierarchy, SynchronizeUserConfig)
         End Sub
+
 
         ''' <summary>
         ''' Write out any and all changes to the app.config file

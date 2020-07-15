@@ -10,6 +10,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
     Friend MustInherit Class ResourceTypeEditorFileBase
         Inherits ResourceTypeEditorInternalBase
 
+
         ''' <summary>
         ''' Checks the resource's value for any errors.  If any error is found it should be indicated by throwing
         '''    an exception.  These errors will be displayed automatically by the callee in the task list.
@@ -35,6 +36,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Indicates whether the resources edited by this resource editor type are allowed to have their
         '''   Persistence property changed.
@@ -45,6 +47,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return False
             End Get
         End Property
+
 
     End Class
 End Namespace

@@ -141,6 +141,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         ''' </summary>
         Private _valueCache As SettingsValueCache
 
+
 #Region " Windows Form Designer generated code "
 
         Public Sub New()
@@ -170,6 +171,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 .Width = DpiAwareness.LogicalToDeviceUnits(Handle, 200)
             }
             _settingsGridView.Columns.Add(TypeEditorCol)
+
 
             _settingsGridView.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2
             _settingsGridView.Text = "m_SettingsGridView"
@@ -388,6 +390,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             TypeColumn.Items.Add(My.Resources.Microsoft_VisualStudio_Editors_Designer.SD_ComboBoxItem_BrowseType)
             TypeColumn.Width = DpiAwareness.LogicalToDeviceUnits(Handle, TypeColumn.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, False) + SystemInformation.VerticalScrollBarWidth + InternalComboBoxPadding)
 
+
             ScopeColumn.Width = DpiAwareness.LogicalToDeviceUnits(Handle, ScopeColumn.GetPreferredWidth(DataGridViewAutoSizeColumnMode.AllCells, False) + SystemInformation.VerticalScrollBarWidth + InternalComboBoxPadding)
 
             'Hook up for broadcast messages
@@ -414,6 +417,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             End If
 
             Settings = Designer.Settings
+
 
             ' ...get new changes service...
             ChangeService = DirectCast(Designer.GetService(GetType(IComponentChangeService)), IComponentChangeService)
@@ -466,6 +470,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
         Private Sub DescriptionLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles _descriptionLinkLabel.LinkClicked
             DesignUtil.DisplayTopicFromF1Keyword(_rootDesigner, HelpIDs.SettingsDesignerDescription)
         End Sub
+
 
         ''' <summary>
         ''' Initialize the fonts in the resource editor from the environment (or from the resx file,
@@ -752,6 +757,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             Return succeeded
         End Function
 
+
 #Region "Column accessors"
 
         ''' <summary>
@@ -775,6 +781,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
 #End Region
 
 #Region "Private helper functions"
+
 
         ''' <summary>
         ''' Completely refresh grid (remove current rows and re-create them from settings
@@ -939,7 +946,9 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             End If
         End Sub
 
+
 #End Region
+
 
 #Region "Control event handlers"
 
@@ -968,6 +977,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             ' already taken care of this :)
             e.Cancel = True
         End Sub
+
 
         ''' <summary>
         ''' The user has deleted a row from the grid - let's make sure that we delete the corresponding
@@ -1239,6 +1249,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 End Select
             End If
         End Sub
+
 
         ''' <summary>
         ''' Get access to a UI service - useful to pop up message boxes and getting fonts
@@ -1832,6 +1843,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             Return False
         End Function
 
+
         ''' <summary>
         ''' If there are unreferenced types, display an error dialog
         ''' </summary>
@@ -2078,6 +2090,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 Return _designerLoader
             End Get
         End Property
+
 
     End Class
 

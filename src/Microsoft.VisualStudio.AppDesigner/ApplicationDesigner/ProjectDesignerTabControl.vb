@@ -49,6 +49,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
 
 #Region " Component Designer generated code "
 
+
         Public Sub New()
             _renderer = New ProjectDesignerTabRenderer(Me)
 
@@ -62,6 +63,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 ResumeLayout()
             End Try
         End Sub 'New
+
 
         'Control override dispose to clean up the component list.
         Protected Overrides Sub Dispose(disposing As Boolean)
@@ -79,6 +81,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
 
         'Required by the Control Designer
         Private _components As System.ComponentModel.IContainer
+
 
         ' NOTE: The following procedure is required by the Component Designer
         ' It can be modified using the Component Designer.  Do not modify it
@@ -120,6 +123,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             SetUpOverflowButton()
         End Sub 'InitTabInfo
 
+
         ''' <summary>
         ''' Create the tab overflow button.
         ''' </summary>
@@ -137,6 +141,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End With
             Controls.Add(OverflowButton)
         End Sub
+
 
         ''' <summary>
         ''' The service provider to use when querying for services related to hosting this control
@@ -201,6 +206,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Called when a non-empty service provider is given to the control.
         ''' </summary>
@@ -232,6 +238,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             RaiseEvent ThemeChanged(Me, EventArgs.Empty)
         End Sub
 
+
         ''' <summary>
         ''' Returns an enumerable set of tab buttons
         ''' </summary>
@@ -241,6 +248,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Clears all the tab buttons off of the control
         ''' </summary>
@@ -249,6 +257,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             InvalidateLayout()
         End Sub
 
+
         ''' <summary>
         ''' Gets a tab button by index
         ''' </summary>
@@ -256,6 +265,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
         Public Function GetTabButton(index As Integer) As ProjectDesignerTabButton
             Return _buttonCollection(index)
         End Function
+
 
         ''' <summary>
         ''' The number of tab buttons, including those not currently visible
@@ -266,6 +276,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Get
         End Property
 
+
         ''' <summary>
         ''' Get the panel that is used to host controls on the right-hand side
         ''' </summary>
@@ -274,6 +285,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return _hostingPanel
             End Get
         End Property
+
 
         ''' <summary>
         ''' Perform layout
@@ -289,12 +301,14 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             Common.Switches.TracePDPerfEnd("ProjectDesignerTabControl.OnLayout()")
         End Sub 'OnLayout
 
+
         ''' <summary>
         ''' Causes the layout to be refreshed
         ''' </summary>
         Protected Sub InvalidateLayout()
             PerformLayout()
         End Sub
+
 
         ''' <summary>
         ''' Adds a new tab to the control
@@ -325,6 +339,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             Return newIndex
         End Function 'AddTab
 
+
         ''' <summary>
         ''' Tracks the last item for paint logic
         ''' </summary>
@@ -333,6 +348,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Return _hoverItem
             End Get
         End Property
+
 
         ''' <summary>
         ''' Currently selected button
@@ -376,6 +392,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Set
         End Property
 
+
         ''' <summary>
         ''' Currently selected button
         ''' </summary>
@@ -396,12 +413,14 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End Set
         End Property
 
+
         ''' <summary>
         ''' Keep painting from happening during WM_PAINT.  We'll paint everything during OnPaintBackground.
         ''' </summary>
         ''' <param name="e"></param>
         Protected Overrides Sub OnPaint(e As PaintEventArgs)
         End Sub
+
 
         ''' <summary>
         ''' Everything will paint in the background, except buttons which handle their own painting
@@ -410,6 +429,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
         Protected Overrides Sub OnPaintBackground(e As PaintEventArgs)
             Renderer.RenderBackground(e.Graphics)
         End Sub
+
 
         ''' <summary>
         ''' Occurs when a button is clicked.
@@ -439,6 +459,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
             End If
         End Sub
 
+
         ''' <summary>
         ''' Occurs when the mouse leaves a button's area
         ''' </summary>
@@ -450,6 +471,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 item.Invalidate()
             End If
         End Sub
+
 
         ''' <summary>
         ''' Occurs when a tab button gets focus
@@ -465,6 +487,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
         Protected Overrides Function CreateAccessibilityInstance() As AccessibleObject
             Return New DesignerTabControlAccessibleObject(Me)
         End Function
+
 
         ''' <summary>
         ''' Retrieves the renderer used for this tab control
@@ -536,6 +559,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 Debug.Fail("How did the overflow button get clicked if there are no items to show in the overflow area?")
             End If
         End Sub
+
 
         ''' <summary>
         ''' Happens when the user clicks on an entry in the overflow menu.
@@ -615,6 +639,7 @@ Namespace Microsoft.VisualStudio.Editors.ApplicationDesigner
                 FlatAppearance.BorderSize = 1
                 BackColor = FlatAppearance.MouseOverBackColor
             End Sub
+
 
             ''' <summary>
             ''' Occurs when the mouse leaves the button

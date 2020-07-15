@@ -81,6 +81,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.Properties.VisualBasic
             await VerifySameValueOnQueryAsync(dynamicEnumValuesGenerator, persistencePageEnumMap, checkMapNameOnly: true);
         }
 
+
         private static void VerifySameValue(IEnumValue? actual, IEnumValue expected, bool checkMapNameOnly = false)
         {
             Assert.NotNull(actual);

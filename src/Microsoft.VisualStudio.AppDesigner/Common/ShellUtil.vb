@@ -32,6 +32,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
             Return GetColor(TryCast(VsUIShell, IVsUIShell2), VsSysColorIndex, DefaultColor)
         End Function
 
+
         ''' <summary>
         ''' Gets a color from the shell's color service.  If for some reason this fails, returns the supplied
         '''   default color.
@@ -122,6 +123,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
             Debug.Assert(ConfigName <> "" AndAlso PlatformName <> "")
         End Sub
 
+
         ''' <summary>
         ''' Returns whether or not we're in simplified config mode for this project, which means that
         '''   we hide the configuration/platform comboboxes.
@@ -140,6 +142,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
 
             Return False 'Default to advanced configs
         End Function
+
 
         ''' <summary>
         ''' Returns whether it's permissible to hide configurations for this project.  This should normally
@@ -200,6 +203,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
             Return ShowValue
         End Function
 
+
         ''' <summary>
         ''' Given an IVsHierarchy, fetch the DTE Project for it, if it exists.  For project types that 
         '''   don't support this, returns Nothing (e.g. C++).
@@ -237,6 +241,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
                 _serviceProvider = sp
                 ConnectBroadcastEvents()
             End Sub
+
 
 #Region "Helper methods to advise/unadvise broadcast messages from the IVsShell service"
 
@@ -287,7 +292,7 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
 
 #Region "Standard dispose pattern - the only thing we need to do is to unadvise events..."
 
-            Private _disposed As Boolean
+            Private _disposed As Boolean = False
 
             ' IDisposable
             Private Overloads Sub Dispose(disposing As Boolean)
@@ -298,6 +303,8 @@ Namespace Microsoft.VisualStudio.Editors.AppDesCommon
                 End If
                 _disposed = True
             End Sub
+
+
 
 #Region " IDisposable Support "
             ' This code added by Visual Basic to correctly implement the disposable pattern.

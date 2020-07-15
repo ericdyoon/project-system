@@ -79,6 +79,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.LanguageServices.Handlers
             Assert.Equal(@"Project", context.DisplayName);
         }
 
+
         [Theory] // Dimension Names                             Dimension Values       Implicit Dimension Names,                 Expected
         [InlineData("Configuration",                            "Debug",               "",                                       "Project")]
         [InlineData("Configuration",                            "Debug",               "Configuration",                          "Project (Debug)")]

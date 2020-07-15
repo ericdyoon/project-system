@@ -70,6 +70,7 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
             DebugTrace("MultiValues constructor")
         End Sub
 
+
         ''' <summary>
         ''' Determines the set of configurations which correspond to the stored
         '''   configuration names and platforms.
@@ -94,6 +95,9 @@ Namespace Microsoft.VisualStudio.Editors.PropPageDesigner
 
             Return Objects
         End Function
+
+
+
 
         <Conditional("DEBUG")>
         Public Sub DebugTrace(Message As String)

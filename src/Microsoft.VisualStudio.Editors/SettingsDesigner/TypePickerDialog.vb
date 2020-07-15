@@ -225,6 +225,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             Return Nothing
         End Function
 
+
         ''' <summary>
         ''' Get whatever type name the user selected
         ''' </summary>
@@ -289,6 +290,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 End If
             End If
         End Sub
+
 
         ''' <summary>
         ''' Try to validate the current type name, giving the user a chance to cancel the close
@@ -496,6 +498,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             TYPE_NODE
         End Enum
 
+
         Private Class TypeTVNode
             Inherits TreeNode
 
@@ -537,6 +540,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                     Return Nodes.ContainsKey(DUMMY_ITEM_TEXT)
                 End Get
             End Property
+
 
             Public ReadOnly Property IsNameSpaceNode As Boolean
                 Get

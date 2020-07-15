@@ -48,6 +48,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
         Private Const VSAPROPID_SKUEdition As Integer = -8534
         Private Const VSAPROPID_SubSKUEdition As Integer = -8546
 
+
         ''' <summary>
         ''' Returns the product SKU as an enum.
         ''' </summary>
@@ -79,6 +80,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns True iff this is a VSTO SKU
         ''' </summary>
@@ -100,6 +102,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns True iff this is an Express SKU
         ''' </summary>
@@ -110,6 +113,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Return s_productSKU = VSASKUEdition.Express
             End Get
         End Property
+
 
         ''' <summary>
         ''' Returns True iff this is an Academic SKU
@@ -122,6 +126,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns True iff this is an Enterprise SKU
         ''' </summary>
@@ -133,6 +138,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns True iff this is a VB SKU
         ''' </summary>
@@ -143,6 +149,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns True iff this is a VC SKU
         ''' </summary>
@@ -152,6 +159,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 Return s_productSubSKU = VSASubSKUEdition.VC
             End Get
         End Property
+
 
 #Region "Private implementation"
 
@@ -165,6 +173,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
                 End If
             End If
         End Sub
+
 
         ''' <summary>
         ''' Reads information on the current SKU

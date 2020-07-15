@@ -115,6 +115,7 @@ Namespace Microsoft.VisualStudio.Editors.MyApplication
             End Set
         End Property
 
+
     End Class
 
 End Namespace

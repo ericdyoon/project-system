@@ -15,7 +15,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
     Partial Friend Class AdvBuildSettingsPropPage
         Inherits PropPageUserControlBase
 
-        Protected DebugSymbols As Boolean
+        Protected DebugSymbols As Boolean = False
 
         Public Sub New()
             MyBase.New()
@@ -68,6 +68,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             cboLanguageVersion.Items.Add(My.Resources.Strings.LanguageVersionAutomaticallySelected)
             cboLanguageVersion.SelectedIndex = 0
         End Sub
+
 
         ''' <summary>
         ''' Customizable processing done before the class has populated controls in the ControlData array
@@ -263,6 +264,7 @@ Namespace Microsoft.VisualStudio.Editors.PropertyPages
             SetDirty(VsProjPropId80.VBPROJPROPID_DebugInfo, False)
             SetDirty(True)
         End Sub
+
 
         Private Function FileAlignmentSet(control As Control, prop As PropertyDescriptor, value As Object) As Boolean
             If PropertyControlData.IsSpecialValue(value) Then

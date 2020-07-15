@@ -70,6 +70,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             End Set
         End Property
 
+
 #End Region
 
 #Region "Methods to query/set the editable state for the managed files"
@@ -260,6 +261,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
                 Dim rgrf(files.Count - 1) As UInteger
 
                 Dim flags As UInteger = 0
+
 
                 VSErrorHandler.ThrowOnFailure(qEdit2.QuerySaveFiles(flags, filesToCheckOut.Length, filesToCheckOut, rgrf, Nothing, result))
 

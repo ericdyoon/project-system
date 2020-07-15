@@ -23,6 +23,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         'Note: These comments aren't in the XML docs because I don't want it to accidentally end up in the public XML
         '   documentation for this class if it is ever made public.
 
+
         ' If the resource editor decides to support a pluggable architecture, new resource type editors can be 
         '   written and registered for use with new serializable types intended for use inside a .resx file.  
         '   The pluggable editor author would subclass ResourceTypeEditor.  This is similar in concept to 
@@ -82,8 +83,11 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         '   the .resx file using the editor.  The advantage of the dialog is that 3rd parties aren’t 
         '   required to register themselves somehow.
 
+
+
         Private _hashCodeCache As Integer
         Private _isHashCodeCached As Boolean
+
 
         ''' <summary>
         ''' Pre-defined values for use with GetExtensionPriority
@@ -94,6 +98,9 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Low = 50       'Low priority used by built-in resource type editors
             Normal = 100   'Normal priority used by built-in resource type editors
         End Enum
+
+
+
 
         ''' <summary>
         ''' This gives a very simple view of a resource inside the resource editor.  It is used only for communicating
@@ -125,6 +132,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
         End Interface
 
+
         ''' <summary>
         ''' This gives a very simple view of a resource file containing resources. 
         ''' </summary>
@@ -142,15 +150,19 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
         End Interface
 
+
         '======================================================================
         '= Constructors =                                                     =
         '======================================================================
+
+
 
         ''' <summary>
         ''' Constructor.
         ''' </summary>
         Public Sub New()
         End Sub
+
 
         ''' <summary>
         ''' Shared constructor.  This construct sets up an association between the types of resources
@@ -174,9 +186,12 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             TypeDescriptor.AddEditorTable(GetType(ResourceTypeEditor), IntrinsicEditors)
         End Sub
 
+
+
         '======================================================================
         '= PROPERTIES =                                                       =
         '======================================================================
+
 
         ''' <summary>
         ''' Returns whether this resource type should be displayed in a string table or not.
@@ -188,6 +203,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return False
             End Get
         End Property
+
 
         ''' <summary>
         '''  Whether all valid items share a same image
@@ -202,9 +218,14 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
+
+
         '======================================================================
         '= METHODS =                                                          =
         '======================================================================
+
+
 
         ''' <summary>
         ''' Determines if two instances of ResourceTypeEditor are of the same type.  Two
@@ -218,6 +239,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public NotOverridable Overrides Function Equals([Object] As Object) As Boolean
             Return [Object].GetType Is [GetType]()
         End Function
+
 
         ''' <summary>
         ''' Determines if two instances of ResourceTypeEditor are of the same type.  Two
@@ -307,6 +329,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Try
         End Function
 
+
         ''' <summary>
         ''' Determines whether a specific ResourceValue can be saved by this ResourceTypeEditor into 
         '''   a file or not.
@@ -316,6 +339,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overridable Function CanSaveResourceToFile(Resource As IResource) As Boolean
             Return False
         End Function
+
 
         ''' <summary>
         ''' Saves a given resource value to a file.
@@ -327,6 +351,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overridable Sub SaveResourceToFile(Resource As IResource, FilePath As String)
             Throw New NotImplementedException
         End Sub
+
 
         ''' <summary>
         ''' Creates a new resource of the type handled by this ResourceTypeEditor at the file path 
@@ -343,6 +368,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overridable Sub CreateNewResourceFile(FilePath As String)
             Throw New NotImplementedException
         End Sub
+
 
         ''' <summary>
         ''' Gets the proper file extension to use for a particular resource.  The extension returned
@@ -370,6 +396,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return Nothing
         End Function
 
+
         ''' <summary>
         ''' Gets a filter string for use with a file open dialog.  That filter should contain all commonly-supported
         '''   extensions handled by this resource type editor (but does not have to necessarily include all of
@@ -385,6 +412,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overridable Function GetOpenFileDialogFilter(ResourceContentFile As IResourceContentFile) As String
             Return ""
         End Function
+
 
         ''' <summary>
         ''' Gets a filter string for use with a file save dialog.  That filter should contain all commonly-supported
@@ -402,6 +430,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return My.Resources.Microsoft_VisualStudio_Editors_Designer.RSE_Filter_All & " (*.*)|*.*"
         End Function
 
+
         ''' <summary>
         ''' Returns an image for displaying to the user for this resource.
         ''' </summary>
@@ -418,6 +447,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return New Bitmap(1, 1)
         End Function
 
+
         ''' <summary>
         ''' Returns whether a given file extension can be handled by this resource type editor, and at what
         '''   priority.
@@ -431,6 +461,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return ExtensionPriorities.NotHandled
         End Function
 
+
         ''' <summary>
         ''' Gets a friendly description to display to the user that indicates the type of a
         '''   particular resource.  E.g., "BMP Image".
@@ -441,6 +472,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return ""
         End Function
 
+
         ''' <summary>
         ''' Gets a friendly size to display to the user for this particular resource.  E.g., "240 x 160".
         ''' </summary>
@@ -449,6 +481,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Overridable Function GetResourceFriendlySize(Resource As IResource) As String
             Return ""
         End Function
+
+
 
         ''' <summary>
         ''' Checks the resource's value for any errors.  If any error is found it should be indicated by throwing
@@ -464,6 +498,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Call Resource.GetValue()
         End Sub
 
+
         ''' <summary>
         ''' Gets the prefix that is used for suggesting resource names to the user.  For instance,
         '''   if this function returns "id", then as the user asks to create a new resource
@@ -474,6 +509,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             'By default, this is simply "id"
             Return "id"
         End Function
+
 
         ''' <summary>
         ''' Attempts to call CanSaveResourceToFile, and returns False if there are any exceptions.
@@ -487,6 +523,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
             Return False
         End Function
+
 
         ''' <summary>
         ''' Indicates whether the resources edited by this resource editor type are allowed to have their

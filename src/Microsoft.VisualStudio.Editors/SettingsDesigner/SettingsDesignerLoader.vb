@@ -210,7 +210,9 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 ' The buffer was empty - no panic, this is probably just a new file
             End If
 
+
             AttachAppConfigDocData(False)
+
 
             If _appConfigDocData IsNot Nothing Then
                 Switches.TraceSDSerializeSettings(TraceLevel.Verbose, "Loading app.config")
@@ -275,6 +277,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
             End If
             Return _appConfigDocData IsNot Nothing
         End Function
+
 
         ''' <summary>
         ''' Make sure that we have a custom tool associated with this file
@@ -388,6 +391,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                             ' Consider: should we force the custom generator to run here - it's probably too late since we already have changed the name...?
                             Return
                         End If
+
 
                         Dim FindSettingsPropertyFilter As New ProjectUtils.FindPropertyFilter(ce, DirectCast(e.OldValue, String))
                         Dim pce As EnvDTE.CodeElement = ProjectUtils.FindElement(SettingsFileProjectItem, True, True, FindSettingsPropertyFilter)
@@ -545,6 +549,7 @@ Namespace Microsoft.VisualStudio.Editors.SettingsDesigner
                 End Try
             End If
         End Sub
+
 
         ''' <summary>
         ''' Called when the document's window is activated or deactivated

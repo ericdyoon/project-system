@@ -84,8 +84,7 @@ namespace Microsoft.VisualStudio.ProjectSystem.VS.PackageRestore
                     _projectSubscriptionService.ProjectSource.SourceBlock.SyncLinkOptions(),
                     _dataSource.SourceBlock.SyncLinkOptions(),
                         DataflowBlockFactory.CreateActionBlock(action, ConfiguredProject.UnconfiguredProject, ProjectFaultSeverity.LimitedFunctionality),
-                        linkOptions: DataflowOption.PropagateCompletion,
-                        cancellationToken: cancellationToken);
+                        linkOptions: DataflowOption.PropagateCompletion);
 
                 return Task.CompletedTask;
             }

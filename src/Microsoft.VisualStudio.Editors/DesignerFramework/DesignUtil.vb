@@ -6,6 +6,7 @@ Imports System.Windows.Forms
 
 Imports Microsoft.VisualStudio.Shell.Interop
 
+
 Namespace Microsoft.VisualStudio.Editors.DesignerFramework
 
     '**************************************************************************
@@ -44,6 +45,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
         '**************************************************************************
         Friend Overloads Shared Sub ReportError(ServiceProvider As IServiceProvider, ErrorMessage As String,
                 HelpLink As String)
+
 
             DesignerMessageBox.Show(ServiceProvider, ErrorMessage, GetDefaultCaption(ServiceProvider),
                     MessageBoxButtons.OK, MessageBoxIcon.Error, HelpLink:=HelpLink)
@@ -172,6 +174,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             Next ChildControl
         End Sub 'SetFontStyles
 
+
         ''' <summary>
         ''' Gets the signed hi word of an IntPtr
         ''' </summary>
@@ -181,6 +184,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
             Return (CType(Number, Integer) >> 16) And &HFFFF
         End Function
 
+
         ''' <summary>
         ''' Gets the signed lo word of an IntPtr
         ''' </summary>
@@ -189,6 +193,7 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
         Public Shared Function SignedLoWord(Number As IntPtr) As Integer
             Return CType(Number, Integer) And &HFFFF
         End Function
+
 
         ''' <summary>
         ''' Calculate the event args for raising the context menu show event for a control.
@@ -305,4 +310,6 @@ Namespace Microsoft.VisualStudio.Editors.DesignerFramework
     End Class 'DesignUtil
 
 End Namespace
+
+
 

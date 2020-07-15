@@ -36,7 +36,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Private WithEvents _componentChangeService As IComponentChangeService
 
         'Our set of resources
-        Private ReadOnly _resources As Dictionary(Of String, Resource)
+        Private ReadOnly _resources As Dictionary(Of String, Resource) = Nothing
 
         'Metadata from the resource file so we can write them back out when saving the file.
         Private ReadOnly _resourceFileMetadata As List(Of DictionaryEntry)
@@ -93,8 +93,9 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
         Private ReadOnly _multiTargetService As MultiTargetService
 
-        Private ReadOnly _allowMOTW As Boolean
+        Private ReadOnly _allowMOTW As Boolean = False
 #End Region
+
 
 #Region "Constructors/Destructors"
 
@@ -154,12 +155,14 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Try
         End Sub
 
+
         ''' <summary>
         ''' IDisposable.Dispose()
         ''' </summary>
         Public Sub Dispose() Implements IDisposable.Dispose
             Dispose(True)
         End Sub
+
 
         ''' <summary>
         ''' Dispose.
@@ -199,7 +202,11 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
+
+
 #Region "Properties"
+
 
         ''' <summary>
         ''' The service provider provided by the designer host
@@ -209,6 +216,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _serviceProvider
             End Get
         End Property
+
 
         ''' <summary>
         ''' Returns/gets the ComponentChangeService used by this ResourceFile.  To have this class stop listening to
@@ -224,6 +232,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Set
         End Property
 
+
         ''' <summary>
         ''' Gets the ResourceEditorView associated with this ResourceFile.
         ''' </summary>
@@ -234,6 +243,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Gets the root component associated with this resource file.
         ''' </summary>
@@ -242,6 +252,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _rootComponent
             End Get
         End Property
+
 
         ''' <summary>
         ''' Retrieves the designer host for the resource editor
@@ -259,6 +270,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Get
         End Property
 
+
         ''' <summary>
         ''' Returns the resources from this resource file
         ''' </summary>
@@ -267,6 +279,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _resources
             End Get
         End Property
+
 
         ''' <summary>
         ''' The base path to use for resolving relative paths in the resx file.  This should be the
@@ -277,6 +290,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Return _basePath
             End Get
         End Property
+
 
         ''' <summary>
         '''  Get the taskProvider
@@ -320,7 +334,12 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
+
+
+
 #Region "Resource Naming and look-up"
+
 
         ''' <summary>
         ''' Gets a suggested name for a new Resource which is not used by any resource currently in this ResourceFile.
@@ -347,6 +366,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return GetUniqueName(UniqueNameFormat)
         End Function
 
+
         ''' <summary>
         ''' Gets a suggested name for a new Resource which is not used by any resource currently in this ResourceFile.
         ''' </summary>
@@ -366,6 +386,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Loop
         End Function
 
+
         ''' <summary>
         ''' Determines if a resource with a given name (case-insensitive) exists in this ResourceFile.
         ''' </summary>
@@ -374,6 +395,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return Not FindResource(Name) Is Nothing
         End Function
 
+
         ''' <summary>
         ''' Determines if a particular resource is in this ResourceFile (by reference)
         ''' </summary>
@@ -381,6 +403,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         Public Function Contains(Resource As Resource) As Boolean
             Return _resources.ContainsValue(Resource)
         End Function
+
 
         ''' <summary>
         ''' Searches for a resource with a given name (case-insensitive) in this ResourceFile.
@@ -421,6 +444,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Function
 
 #End Region
+
 
 #Region "Adding/removing/renaming resources"
 
@@ -484,6 +508,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 #End If
         End Sub
 
+
         ''' <summary>
         ''' Removes the specified Resource from this ResourceFile.
         ''' </summary>
@@ -517,6 +542,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Resource.Dispose()
             End If
         End Sub
+
 
         ''' <summary>
         ''' Called by the component change service when a new component is added to the designer host's container.
@@ -587,6 +613,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Resource.AddFileWatcherEntry(View.FileWatcher)
             End If
         End Sub
+
 
         ''' <summary>
         ''' Called by the component change service when a Resource is removed, either by us or by an external
@@ -661,6 +688,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             DelayFlushAndRunCustomTool()
         End Sub
 
+
         ''' <summary>
         ''' Rename a resource in the ResourceFile.  This operation must come through here and not simply
         '''   be done directly on the Resource, because we also have to change the Resource's
@@ -701,6 +729,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Debug.Fail("Trying to rename component that's not in the resource file")
             End If
         End Sub
+
 
         ''' <summary>
         ''' Called by the component change service when a resource has been renamed (rather, its component
@@ -763,6 +792,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Try
         End Sub
 
+
         ''' <summary>
         ''' Called by the component change service when a resource has been changed 
         ''' This is called both when we changed the Resource ourselves and when something external does it
@@ -781,6 +811,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Sub
 
 #End Region
+
+
 
 #Region "Reading/Writing/Enumerating"
 
@@ -819,6 +851,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Function
 
+
         ''' <summary>
         ''' Writes all resources into a TextWriter in resx format.
         ''' </summary>
@@ -841,6 +874,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             '  the caller.
             WriteResources(ResXWriter)
         End Sub
+
 
         ''' <summary>
         ''' Reads all resources into this ResourceFile from a ResXReader
@@ -900,6 +934,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 _isLoadingResourceFile = False
             End Try
         End Sub
+
 
         ''' <summary>
         ''' Writes all resources into a ResXResourceWriter
@@ -971,6 +1006,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #Region "UI"
 
+
         ''' <summary>
         ''' Invalidates this resource in the resource editor view, which causes it to be updated on the next
         '''   paint.
@@ -986,6 +1022,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 #End Region
 
 #Region "Task List integration"
+
 
 #Region "ResourceTaskType enum"
 
@@ -1009,6 +1046,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region "Nested class - ResourceTaskSet"
 
         ''' <summary>
@@ -1025,6 +1063,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             'Backs Tasks property
             '  (could just have well been a hashtable as an array, but an array is more lightweight)
             Private ReadOnly _tasks() As ResourceTask
+
+
 
             ''' <summary>
             ''' Shared sub New.  Calculates m_ErrorTypeCount and verifies that the
@@ -1043,12 +1083,16 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 #End If
             End Sub
 
+
             ''' <summary>
             ''' Constructor.
             ''' </summary>
             Public Sub New()
                 ReDim _tasks(s_errorTypeCount - 1)
             End Sub
+
+
+
 
             ''' <summary>
             ''' Gets the array (indexed by ResourceTaskType) of tasks in this set
@@ -1063,6 +1107,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
 
 #End Region
 
+
 #Region "Nested class - ResourceTask"
 
         ''' <summary>
@@ -1076,6 +1121,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             'The resource associated with this task list entry.
             Private ReadOnly _resource As Resource
 
+
             ''' <summary>
             ''' Constructor.
             ''' </summary>
@@ -1083,6 +1129,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Public Sub New(Resource As Resource)
                 _resource = Resource
             End Sub
+
 
             ''' <summary>
             ''' The resource associated with this task list entry.
@@ -1096,6 +1143,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
         End Class
 
 #End Region
+
+
 
         ''' <summary>
         ''' Returns True iff the specified Resource has any task list items.
@@ -1118,6 +1167,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return False
         End Function
 
+
         ''' <summary>
         ''' Gets the task entry text for a particular resource and resource type.  Returns Nothing if there is
         '''   no such task.
@@ -1138,6 +1188,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             'Found an entry.
             Return Task.Text
         End Function
+
 
         ''' <summary>
         ''' Gets the text from all task list entries for a particular Resource, separated by
@@ -1164,6 +1215,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return Messages
         End Function
 
+
         ''' <summary>
         ''' This handler gets called when the user double-clicks on a task list entry.
         ''' </summary>
@@ -1182,6 +1234,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Debug.Fail("Task list entry didn't contain a resource reference")
             End If
         End Sub
+
 
         ''' <summary>
         ''' Associates a particular task list text with a given resource.  If there is already a task list
@@ -1264,6 +1317,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Clear a the slot for a particular task type in a particular resource.
         ''' </summary>
@@ -1308,6 +1362,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Clears all task list entries for the given resource.
         ''' </summary>
@@ -1338,6 +1393,8 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
+
         ''' <summary>
         ''' Adds a resource to the list of resources that need to be checked for errors
         '''   during idle time processing.  When we load a resource file, we only check
@@ -1363,6 +1420,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End If
         End Sub
 
+
         ''' <summary>
         ''' Causes all the resources in the file to be again queued for validation during
         '''   idle time.
@@ -1379,6 +1437,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 Next
             End If
         End Sub
+
 
         ''' <summary>
         ''' Removes a resource from the list of resources that need to be checked for
@@ -1398,6 +1457,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 End If
             End If
         End Sub
+
 
         'CONSIDER: This event only fires once for every Windows message, which means it may take a while to
         '  get through all the resources and have them checked (processing only occurs *while* the user is
@@ -1439,6 +1499,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 RemoveHandler Application.Idle, AddressOf OnDelayCheckForErrors
             End If
         End Sub
+
 
         ''' <summary>
         ''' Stops delay-checking for errors, and removes ourselves from idle-time processing.  The list
@@ -1507,6 +1568,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             End Function
         End Class
 #End Region
+
 
 #Region "Miscellaneous"
 
@@ -1619,6 +1681,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
             Return CustomToolValue <> ""
         End Function
 
+
         ''' <summary>
         ''' Gets the CodeDomProvider for this ResX file, or Nothing if none found.
         ''' </summary>
@@ -1671,6 +1734,7 @@ Namespace Microsoft.VisualStudio.Editors.ResourceEditor
                 End Try
             End If
         End Sub
+
 
         Private Function IsDangerous(resxFilePath As String, allBufferText As String) As Boolean
             If _allowMOTW Then
